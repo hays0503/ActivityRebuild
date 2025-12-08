@@ -1,69 +1,10 @@
 // ==UserScript==
 // @name       activityrebuild
 // @namespace  npm/vite-plugin-monkey
-// @version    0.1
+// @version    0.2
 // @icon       https://vitejs.dev/logo.svg
 // @match      https://bitrix.triline.kz/crm/activity/*
-// @grant      GM.addElement
-// @grant      GM.addStyle
-// @grant      GM.addValueChangeListener
-// @grant      GM.audio
-// @grant      GM.cookie
-// @grant      GM.deleteValue
-// @grant      GM.deleteValues
-// @grant      GM.download
-// @grant      GM.getResourceText
-// @grant      GM.getResourceUrl
-// @grant      GM.getTab
-// @grant      GM.getTabs
-// @grant      GM.getValue
-// @grant      GM.getValues
-// @grant      GM.info
-// @grant      GM.listValues
-// @grant      GM.log
-// @grant      GM.notification
-// @grant      GM.openInTab
-// @grant      GM.registerMenuCommand
-// @grant      GM.removeValueChangeListener
-// @grant      GM.saveTab
-// @grant      GM.setClipboard
-// @grant      GM.setValue
-// @grant      GM.setValues
-// @grant      GM.unregisterMenuCommand
-// @grant      GM.webRequest
-// @grant      GM.xmlHttpRequest
-// @grant      GM_addElement
-// @grant      GM_addStyle
-// @grant      GM_addValueChangeListener
-// @grant      GM_audio
-// @grant      GM_cookie
-// @grant      GM_deleteValue
-// @grant      GM_deleteValues
-// @grant      GM_download
-// @grant      GM_getResourceText
-// @grant      GM_getResourceURL
-// @grant      GM_getTab
-// @grant      GM_getTabs
-// @grant      GM_getValue
-// @grant      GM_getValues
-// @grant      GM_info
-// @grant      GM_listValues
-// @grant      GM_log
-// @grant      GM_notification
-// @grant      GM_openInTab
-// @grant      GM_registerMenuCommand
-// @grant      GM_removeValueChangeListener
-// @grant      GM_saveTab
-// @grant      GM_setClipboard
-// @grant      GM_setValue
-// @grant      GM_setValues
-// @grant      GM_unregisterMenuCommand
-// @grant      GM_webRequest
-// @grant      GM_xmlhttpRequest
-// @grant      unsafeWindow
-// @grant      window.close
-// @grant      window.focus
-// @grant      window.onurlchange
+// @grant      none
 // ==/UserScript==
 
 (function () {
@@ -12666,6 +12607,7 @@
     let t2;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
       t1 = () => {
+        console.log("useGetTaskList - start");
         const BX = window.BX;
         if (!BX?.CrmActivityEditor) {
           return;
@@ -15253,14 +15195,6 @@ jsxRuntimeExports.jsx(FinalTag, { ...finalProps })
   function ensure(c, m) {
     if (c == null) throw new Error(m());
   }
-  function ensureProps(props, keys, scope) {
-    let missingKeys = [];
-    for (const key of keys) {
-      if (props[key] == null) missingKeys.push(key);
-    }
-    if (missingKeys.length > 0)
-      throw new Error(`[zag-js${""}] missing required props: ${missingKeys.join(", ")}`);
-  }
   function getErrorMessage(hook, provider) {
     return `${hook} returned \`undefined\`. Seems you forgot to wrap component within ${provider}`;
   }
@@ -15300,9 +15234,9 @@ jsxRuntimeExports.jsx(FinalTag, { ...finalProps })
       getWindow: () => window
     }
   });
-  var __defProp$4 = Object.defineProperty;
-  var __defNormalProp$4 = (obj, key, value) => key in obj ? __defProp$4(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __publicField$4 = (obj, key, value) => __defNormalProp$4(obj, typeof key !== "symbol" ? key + "" : key, value);
+  var __defProp$3 = Object.defineProperty;
+  var __defNormalProp$3 = (obj, key, value) => key in obj ? __defProp$3(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __publicField$3 = (obj, key, value) => __defNormalProp$3(obj, typeof key !== "symbol" ? key + "" : key, value);
   function isCaretAtStart(input) {
     if (!input) return false;
     try {
@@ -15734,9 +15668,9 @@ jsxRuntimeExports.jsx(FinalTag, { ...finalProps })
   }
   var AnimationFrame = class _AnimationFrame {
     constructor() {
-      __publicField$4(this, "id", null);
-      __publicField$4(this, "fn_cleanup");
-      __publicField$4(this, "cleanup", () => {
+      __publicField$3(this, "id", null);
+      __publicField$3(this, "fn_cleanup");
+      __publicField$3(this, "cleanup", () => {
         this.cancel();
       });
     }
@@ -16382,15 +16316,15 @@ jsxRuntimeExports.jsx(FinalTag, { ...finalProps })
     strict: false,
     defaultValue: { dir: "ltr", locale: "en-US" }
   });
-  const { withContext: withContext$7 } = createRecipeContext({
+  const { withContext: withContext$6 } = createRecipeContext({
     key: "heading"
   });
-  const Heading = withContext$7("h2");
+  const Heading = withContext$6("h2");
   Heading.displayName = "Heading";
-  const { withContext: withContext$6 } = createRecipeContext({
+  const { withContext: withContext$5 } = createRecipeContext({
     key: "mark"
   });
-  const Mark = withContext$6("mark");
+  const Mark = withContext$5("mark");
   Mark.displayName = "Mark";
   const createSplitProps = () => (props, keys) => keys.reduce(
     (previousValue, currentValue) => {
@@ -16416,7 +16350,7 @@ jsxRuntimeExports.jsx(FinalTag, { ...finalProps })
     });
   }
   var createProps$1 = () => (props) => Array.from(new Set(props));
-  function connect$2(service, _normalize) {
+  function connect$1(service, _normalize) {
     const { state: state2, send, context } = service;
     const present = state2.matches("mounted", "unmountSuspended");
     return {
@@ -16431,7 +16365,7 @@ jsxRuntimeExports.jsx(FinalTag, { ...finalProps })
       }
     };
   }
-  var machine$2 = createMachine$4({
+  var machine$1 = createMachine$4({
     props({ props: props2 }) {
       return { ...props2, present: !!props2.present };
     },
@@ -16945,8 +16879,8 @@ machine2.on?.[event.type]
       present,
       onExitComplete: useEvent(props.onExitComplete)
     };
-    const service = useMachine(machine$2, machineProps);
-    const api = connect$2(service);
+    const service = useMachine(machine$1, machineProps);
+    const api = connect$1(service);
     if (api.present) {
       wasEverPresent.current = true;
     }
@@ -16969,10 +16903,10 @@ machine2.on?.[event.type]
   });
   const Span = chakra("span");
   Span.displayName = "Span";
-  const { withContext: withContext$5 } = createRecipeContext({
+  const { withContext: withContext$4 } = createRecipeContext({
     key: "text"
   });
-  const Text = withContext$5("p");
+  const Text = withContext$4("p");
   Text.displayName = "Text";
   var createAnatomy = (name, parts2 = []) => ({
     parts: (...values) => {
@@ -17015,9 +16949,9 @@ machine2.on?.[event.type]
     "defaultOpen",
     "open"
   ]);
-  var __defProp$3 = Object.defineProperty;
-  var __defNormalProp$3 = (obj, key, value) => key in obj ? __defProp$3(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __publicField$3 = (obj, key, value) => __defNormalProp$3(obj, key + "", value);
+  var __defProp$2 = Object.defineProperty;
+  var __defNormalProp$2 = (obj, key, value) => key in obj ? __defProp$2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __publicField$2 = (obj, key, value) => __defNormalProp$2(obj, key + "", value);
   var isEqualObject = (a, b2) => {
     if (Object.keys(a).length !== Object.keys(b2).length) return false;
     for (let key in a) if (a[key] !== b2[key]) return false;
@@ -17241,7 +17175,7 @@ toHSL() {
       return _RGBColor2.colorChannels;
     }
   };
-  __publicField$3(_RGBColor, "colorChannels", ["red", "green", "blue"]);
+  __publicField$2(_RGBColor, "colorChannels", ["red", "green", "blue"]);
   var RGBColor = _RGBColor;
   var HSL_REGEX = /hsl\(([-+]?\d+(?:.\d+)?\s*,\s*[-+]?\d+(?:.\d+)?%\s*,\s*[-+]?\d+(?:.\d+)?%)\)|hsla\(([-+]?\d+(?:.\d+)?\s*,\s*[-+]?\d+(?:.\d+)?%\s*,\s*[-+]?\d+(?:.\d+)?%\s*,\s*[-+]?\d(.\d+)?)\)/;
   var _HSLColor = class _HSLColor2 extends Color {
@@ -17361,7 +17295,7 @@ toRGB() {
       return _HSLColor2.colorChannels;
     }
   };
-  __publicField$3(_HSLColor, "colorChannels", ["hue", "saturation", "lightness"]);
+  __publicField$2(_HSLColor, "colorChannels", ["hue", "saturation", "lightness"]);
   var HSLColor = _HSLColor;
   var HSB_REGEX = /hsb\(([-+]?\d+(?:.\d+)?\s*,\s*[-+]?\d+(?:.\d+)?%\s*,\s*[-+]?\d+(?:.\d+)?%)\)|hsba\(([-+]?\d+(?:.\d+)?\s*,\s*[-+]?\d+(?:.\d+)?%\s*,\s*[-+]?\d+(?:.\d+)?%\s*,\s*[-+]?\d(.\d+)?)\)/;
   var _HSBColor = class _HSBColor2 extends Color {
@@ -17481,7 +17415,7 @@ toRGB() {
       return _HSBColor2.colorChannels;
     }
   };
-  __publicField$3(_HSBColor, "colorChannels", ["hue", "saturation", "brightness"]);
+  __publicField$2(_HSBColor, "colorChannels", ["hue", "saturation", "brightness"]);
   var HSBColor = _HSBColor;
   var nativeColors = "aliceblue:f0f8ff,antiquewhite:faebd7,aqua:00ffff,aquamarine:7fffd4,azure:f0ffff,beige:f5f5dc,bisque:ffe4c4,black:000000,blanchedalmond:ffebcd,blue:0000ff,blueviolet:8a2be2,brown:a52a2a,burlywood:deb887,cadetblue:5f9ea0,chartreuse:7fff00,chocolate:d2691e,coral:ff7f50,cornflowerblue:6495ed,cornsilk:fff8dc,crimson:dc143c,cyan:00ffff,darkblue:00008b,darkcyan:008b8b,darkgoldenrod:b8860b,darkgray:a9a9a9,darkgreen:006400,darkkhaki:bdb76b,darkmagenta:8b008b,darkolivegreen:556b2f,darkorange:ff8c00,darkorchid:9932cc,darkred:8b0000,darksalmon:e9967a,darkseagreen:8fbc8f,darkslateblue:483d8b,darkslategray:2f4f4f,darkturquoise:00ced1,darkviolet:9400d3,deeppink:ff1493,deepskyblue:00bfff,dimgray:696969,dodgerblue:1e90ff,firebrick:b22222,floralwhite:fffaf0,forestgreen:228b22,fuchsia:ff00ff,gainsboro:dcdcdc,ghostwhite:f8f8ff,gold:ffd700,goldenrod:daa520,gray:808080,green:008000,greenyellow:adff2f,honeydew:f0fff0,hotpink:ff69b4,indianred:cd5c5c,indigo:4b0082,ivory:fffff0,khaki:f0e68c,lavender:e6e6fa,lavenderblush:fff0f5,lawngreen:7cfc00,lemonchiffon:fffacd,lightblue:add8e6,lightcoral:f08080,lightcyan:e0ffff,lightgoldenrodyellow:fafad2,lightgrey:d3d3d3,lightgreen:90ee90,lightpink:ffb6c1,lightsalmon:ffa07a,lightseagreen:20b2aa,lightskyblue:87cefa,lightslategray:778899,lightsteelblue:b0c4de,lightyellow:ffffe0,lime:00ff00,limegreen:32cd32,linen:faf0e6,magenta:ff00ff,maroon:800000,mediumaquamarine:66cdaa,mediumblue:0000cd,mediumorchid:ba55d3,mediumpurple:9370d8,mediumseagreen:3cb371,mediumslateblue:7b68ee,mediumspringgreen:00fa9a,mediumturquoise:48d1cc,mediumvioletred:c71585,midnightblue:191970,mintcream:f5fffa,mistyrose:ffe4e1,moccasin:ffe4b5,navajowhite:ffdead,navy:000080,oldlace:fdf5e6,olive:808000,olivedrab:6b8e23,orange:ffa500,orangered:ff4500,orchid:da70d6,palegoldenrod:eee8aa,palegreen:98fb98,paleturquoise:afeeee,palevioletred:d87093,papayawhip:ffefd5,peachpuff:ffdab9,peru:cd853f,pink:ffc0cb,plum:dda0dd,powderblue:b0e0e6,purple:800080,rebeccapurple:663399,red:ff0000,rosybrown:bc8f8f,royalblue:4169e1,saddlebrown:8b4513,salmon:fa8072,sandybrown:f4a460,seagreen:2e8b57,seashell:fff5ee,sienna:a0522d,silver:c0c0c0,skyblue:87ceeb,slateblue:6a5acd,slategray:708090,snow:fffafa,springgreen:00ff7f,steelblue:4682b4,tan:d2b48c,teal:008080,thistle:d8bfd8,tomato:ff6347,turquoise:40e0d0,violet:ee82ee,wheat:f5deb3,white:ffffff,whitesmoke:f5f5f5,yellow:ffff00,yellowgreen:9acd32";
   var makeMap = (str) => {
@@ -19874,14 +19808,14 @@ root: root2.ownerDocument
   var getHiddenInputId$1 = (ctx) => ctx.ids?.hiddenInput ?? `color-picker:${ctx.id}:hidden-input`;
   var getControlId$1 = (ctx) => ctx.ids?.control ?? `color-picker:${ctx.id}:control`;
   var getTriggerId$6 = (ctx) => ctx.ids?.trigger ?? `color-picker:${ctx.id}:trigger`;
-  var getContentId$7 = (ctx) => ctx.ids?.content ?? `color-picker:${ctx.id}:content`;
+  var getContentId$6 = (ctx) => ctx.ids?.content ?? `color-picker:${ctx.id}:content`;
   var getPositionerId$5 = (ctx) => ctx.ids?.positioner ?? `color-picker:${ctx.id}:positioner`;
   var getFormatSelectId = (ctx) => ctx.ids?.formatSelect ?? `color-picker:${ctx.id}:format-select`;
   var getAreaId = (ctx) => ctx.ids?.area ?? `color-picker:${ctx.id}:area`;
   var getAreaThumbId = (ctx) => ctx.ids?.areaThumb ?? `color-picker:${ctx.id}:area-thumb`;
   var getChannelSliderTrackId = (ctx, channel) => ctx.ids?.channelSliderTrack?.(channel) ?? `color-picker:${ctx.id}:slider-track:${channel}`;
   var getChannelSliderThumbId = (ctx, channel) => ctx.ids?.channelSliderThumb?.(channel) ?? `color-picker:${ctx.id}:slider-thumb:${channel}`;
-  var getContentEl$7 = (ctx) => ctx.getById(getContentId$7(ctx));
+  var getContentEl$6 = (ctx) => ctx.getById(getContentId$6(ctx));
   var getAreaThumbEl = (ctx) => ctx.getById(getAreaThumbId(ctx));
   var getChannelSliderThumbEl = (ctx, channel) => ctx.getById(getChannelSliderThumbId(ctx, channel));
   var getFormatSelectEl = (ctx) => ctx.getById(getFormatSelectId(ctx));
@@ -19911,7 +19845,7 @@ root: root2.ownerDocument
   };
   var getChannelInputEls = (ctx) => {
     return [
-      ...queryAll(getContentEl$7(ctx), "input[data-channel]"),
+      ...queryAll(getContentEl$6(ctx), "input[data-channel]"),
       ...queryAll(getControlEl$1(ctx), "input[data-channel]")
     ];
   };
@@ -20326,7 +20260,7 @@ root: root2.ownerDocument
         },
         trackDismissableElement({ context, scope, prop, send }) {
           if (prop("inline")) return;
-          const getContentEl2 = () => getContentEl$7(scope);
+          const getContentEl2 = () => getContentEl$6(scope);
           return trackDismissableElement(getContentEl2, {
             type: "popover",
             exclude: getTriggerEl$6(scope),
@@ -20369,7 +20303,7 @@ root: root2.ownerDocument
         disableTextSelection({ scope }) {
           return disableTextSelection({
             doc: scope.getDoc(),
-            target: getContentEl$7(scope)
+            target: getContentEl$6(scope)
           });
         }
       },
@@ -20516,7 +20450,7 @@ root: root2.ownerDocument
           if (!prop("openAutoFocus")) return;
           raf(() => {
             const element = getInitialFocus({
-              root: getContentEl$7(scope),
+              root: getContentEl$6(scope),
               getInitialEl: prop("initialFocusEl")
             });
             element?.focus({ preventScroll: true });
@@ -20666,13 +20600,13 @@ root: root2.ownerDocument
   const splitRenderStrategyProps = (props) => createSplitProps()(props, ["lazyMount", "unmountOnExit"]);
   var anatomy$q = createAnatomy("accordion").parts("root", "item", "itemTrigger", "itemContent", "itemIndicator");
   anatomy$q.build();
-  var getRootId$3 = (ctx) => ctx.ids?.root ?? `accordion:${ctx.id}`;
+  var getRootId$2 = (ctx) => ctx.ids?.root ?? `accordion:${ctx.id}`;
   var getItemTriggerId = (ctx, value) => ctx.ids?.itemTrigger?.(value) ?? `accordion:${ctx.id}:trigger:${value}`;
-  var getRootEl$2 = (ctx) => ctx.getById(getRootId$3(ctx));
+  var getRootEl$1 = (ctx) => ctx.getById(getRootId$2(ctx));
   var getTriggerEls = (ctx) => {
-    const ownerId = CSS.escape(getRootId$3(ctx));
+    const ownerId = CSS.escape(getRootId$2(ctx));
     const selector = `[aria-controls][data-ownedby='${ownerId}']:not([disabled])`;
-    return queryAll(getRootEl$2(ctx), selector);
+    return queryAll(getRootEl$1(ctx), selector);
   };
   var getFirstTriggerEl$1 = (ctx) => first(getTriggerEls(ctx));
   var getLastTriggerEl$1 = (ctx) => last(getTriggerEls(ctx));
@@ -21102,9 +21036,9 @@ root: root2.ownerDocument
   ]);
   createProps$1()(["copied"]);
   const colorPickerAnatomy$1 = anatomy$s.extendWith("view");
-  var __defProp$2 = Object.defineProperty;
-  var __defNormalProp$2 = (obj, key, value) => key in obj ? __defProp$2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __publicField$2 = (obj, key, value) => __defNormalProp$2(obj, typeof key !== "symbol" ? key + "" : key, value);
+  var __defProp$1 = Object.defineProperty;
+  var __defNormalProp$1 = (obj, key, value) => key in obj ? __defProp$1(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __publicField$1 = (obj, key, value) => __defNormalProp$1(obj, typeof key !== "symbol" ? key + "" : key, value);
   var fallback$1 = {
     itemToValue(item) {
       if (typeof item === "string") return item;
@@ -21124,18 +21058,18 @@ root: root2.ownerDocument
   var ListCollection = class _ListCollection {
     constructor(options) {
       this.options = options;
-      __publicField$2(this, "items");
-      __publicField$2(this, "indexMap", null);
-      __publicField$2(this, "copy", (items) => {
+      __publicField$1(this, "items");
+      __publicField$1(this, "indexMap", null);
+      __publicField$1(this, "copy", (items) => {
         return new _ListCollection({ ...this.options, items: items ?? [...this.items] });
       });
-      __publicField$2(this, "isEqual", (other) => {
+      __publicField$1(this, "isEqual", (other) => {
         return isEqual(this.items, other.items);
       });
-      __publicField$2(this, "setItems", (items) => {
+      __publicField$1(this, "setItems", (items) => {
         return this.copy(items);
       });
-      __publicField$2(this, "getValues", (items = this.items) => {
+      __publicField$1(this, "getValues", (items = this.items) => {
         const values = [];
         for (const item of items) {
           const value = this.getItemValue(item);
@@ -21143,12 +21077,12 @@ root: root2.ownerDocument
         }
         return values;
       });
-      __publicField$2(this, "find", (value) => {
+      __publicField$1(this, "find", (value) => {
         if (value == null) return null;
         const index = this.indexOf(value);
         return index !== -1 ? this.at(index) : null;
       });
-      __publicField$2(this, "findMany", (values) => {
+      __publicField$1(this, "findMany", (values) => {
         const result = [];
         for (const value of values) {
           const item = this.find(value);
@@ -21156,7 +21090,7 @@ root: root2.ownerDocument
         }
         return result;
       });
-      __publicField$2(this, "at", (index) => {
+      __publicField$1(this, "at", (index) => {
         if (!this.options.groupBy && !this.options.groupSort) {
           return this.items[index] ?? null;
         }
@@ -21170,31 +21104,31 @@ root: root2.ownerDocument
         }
         return null;
       });
-      __publicField$2(this, "sortFn", (valueA, valueB) => {
+      __publicField$1(this, "sortFn", (valueA, valueB) => {
         const indexA = this.indexOf(valueA);
         const indexB = this.indexOf(valueB);
         return (indexA ?? 0) - (indexB ?? 0);
       });
-      __publicField$2(this, "sort", (values) => {
+      __publicField$1(this, "sort", (values) => {
         return [...values].sort(this.sortFn.bind(this));
       });
-      __publicField$2(this, "getItemValue", (item) => {
+      __publicField$1(this, "getItemValue", (item) => {
         if (item == null) return null;
         return this.options.itemToValue?.(item) ?? fallback$1.itemToValue(item);
       });
-      __publicField$2(this, "getItemDisabled", (item) => {
+      __publicField$1(this, "getItemDisabled", (item) => {
         if (item == null) return false;
         return this.options.isItemDisabled?.(item) ?? fallback$1.isItemDisabled(item);
       });
-      __publicField$2(this, "stringifyItem", (item) => {
+      __publicField$1(this, "stringifyItem", (item) => {
         if (item == null) return null;
         return this.options.itemToString?.(item) ?? fallback$1.itemToString(item);
       });
-      __publicField$2(this, "stringify", (value) => {
+      __publicField$1(this, "stringify", (value) => {
         if (value == null) return null;
         return this.stringifyItem(this.find(value));
       });
-      __publicField$2(this, "stringifyItems", (items, separator = ", ") => {
+      __publicField$1(this, "stringifyItems", (items, separator = ", ") => {
         const strs = [];
         for (const item of items) {
           const str = this.stringifyItem(item);
@@ -21202,17 +21136,17 @@ root: root2.ownerDocument
         }
         return strs.join(separator);
       });
-      __publicField$2(this, "stringifyMany", (value, separator) => {
+      __publicField$1(this, "stringifyMany", (value, separator) => {
         return this.stringifyItems(this.findMany(value), separator);
       });
-      __publicField$2(this, "has", (value) => {
+      __publicField$1(this, "has", (value) => {
         return this.indexOf(value) !== -1;
       });
-      __publicField$2(this, "hasItem", (item) => {
+      __publicField$1(this, "hasItem", (item) => {
         if (item == null) return false;
         return this.has(this.getItemValue(item));
       });
-      __publicField$2(this, "group", () => {
+      __publicField$1(this, "group", () => {
         const { groupBy, groupSort } = this.options;
         if (!groupBy) return [["", [...this.items]]];
         const groups = new Map();
@@ -21241,21 +21175,21 @@ root: root2.ownerDocument
         }
         return entries;
       });
-      __publicField$2(this, "getNextValue", (value, step = 1, clamp2 = false) => {
+      __publicField$1(this, "getNextValue", (value, step = 1, clamp2 = false) => {
         let index = this.indexOf(value);
         if (index === -1) return null;
         index = clamp2 ? Math.min(index + step, this.size - 1) : index + step;
         while (index <= this.size && this.getItemDisabled(this.at(index))) index++;
         return this.getItemValue(this.at(index));
       });
-      __publicField$2(this, "getPreviousValue", (value, step = 1, clamp2 = false) => {
+      __publicField$1(this, "getPreviousValue", (value, step = 1, clamp2 = false) => {
         let index = this.indexOf(value);
         if (index === -1) return null;
         index = clamp2 ? Math.max(index - step, 0) : index - step;
         while (index >= 0 && this.getItemDisabled(this.at(index))) index--;
         return this.getItemValue(this.at(index));
       });
-      __publicField$2(this, "indexOf", (value) => {
+      __publicField$1(this, "indexOf", (value) => {
         if (value == null) return -1;
         if (!this.options.groupBy && !this.options.groupSort) {
           return this.items.findIndex((item) => this.getItemValue(item) === value);
@@ -21276,7 +21210,7 @@ root: root2.ownerDocument
         }
         return this.indexMap.get(value) ?? -1;
       });
-      __publicField$2(this, "getByText", (text, current) => {
+      __publicField$1(this, "getByText", (text, current) => {
         const currentIndex = current != null ? this.indexOf(current) : -1;
         const isSingleKey = text.length === 1;
         for (let i = 0; i < this.items.length; i++) {
@@ -21287,7 +21221,7 @@ root: root2.ownerDocument
         }
         return void 0;
       });
-      __publicField$2(this, "search", (queryString, options2) => {
+      __publicField$1(this, "search", (queryString, options2) => {
         const { state: state2, currentValue, timeout = 350 } = options2;
         const search = state2.keysSoFar + queryString;
         const isRepeated = search.length > 1 && Array.from(search).every((char2) => char2 === search[0]);
@@ -21311,12 +21245,12 @@ root: root2.ownerDocument
         update(search);
         return value;
       });
-      __publicField$2(this, "update", (value, item) => {
+      __publicField$1(this, "update", (value, item) => {
         let index = this.indexOf(value);
         if (index === -1) return this;
         return this.copy([...this.items.slice(0, index), item, ...this.items.slice(index + 1)]);
       });
-      __publicField$2(this, "upsert", (value, item, mode = "append") => {
+      __publicField$1(this, "upsert", (value, item, mode = "append") => {
         let index = this.indexOf(value);
         if (index === -1) {
           const fn = mode === "append" ? this.append : this.prepend;
@@ -21324,10 +21258,10 @@ root: root2.ownerDocument
         }
         return this.copy([...this.items.slice(0, index), item, ...this.items.slice(index + 1)]);
       });
-      __publicField$2(this, "insert", (index, ...items) => {
+      __publicField$1(this, "insert", (index, ...items) => {
         return this.copy(insert(this.items, index, ...items));
       });
-      __publicField$2(this, "insertBefore", (value, ...items) => {
+      __publicField$1(this, "insertBefore", (value, ...items) => {
         let toIndex = this.indexOf(value);
         if (toIndex === -1) {
           if (this.items.length === 0) toIndex = 0;
@@ -21335,7 +21269,7 @@ root: root2.ownerDocument
         }
         return this.copy(insert(this.items, toIndex, ...items));
       });
-      __publicField$2(this, "insertAfter", (value, ...items) => {
+      __publicField$1(this, "insertAfter", (value, ...items) => {
         let toIndex = this.indexOf(value);
         if (toIndex === -1) {
           if (this.items.length === 0) toIndex = 0;
@@ -21343,17 +21277,17 @@ root: root2.ownerDocument
         }
         return this.copy(insert(this.items, toIndex + 1, ...items));
       });
-      __publicField$2(this, "prepend", (...items) => {
+      __publicField$1(this, "prepend", (...items) => {
         return this.copy(insert(this.items, 0, ...items));
       });
-      __publicField$2(this, "append", (...items) => {
+      __publicField$1(this, "append", (...items) => {
         return this.copy(insert(this.items, this.items.length, ...items));
       });
-      __publicField$2(this, "filter", (fn) => {
+      __publicField$1(this, "filter", (fn) => {
         const filteredItems = this.items.filter((item, index) => fn(this.stringifyItem(item), index, item));
         return this.copy(filteredItems);
       });
-      __publicField$2(this, "remove", (...itemsOrValues) => {
+      __publicField$1(this, "remove", (...itemsOrValues) => {
         const values = itemsOrValues.map(
           (itemOrValue) => typeof itemOrValue === "string" ? itemOrValue : this.getItemValue(itemOrValue)
         );
@@ -21365,34 +21299,34 @@ root: root2.ownerDocument
           })
         );
       });
-      __publicField$2(this, "move", (value, toIndex) => {
+      __publicField$1(this, "move", (value, toIndex) => {
         const fromIndex = this.indexOf(value);
         if (fromIndex === -1) return this;
         return this.copy(move(this.items, [fromIndex], toIndex));
       });
-      __publicField$2(this, "moveBefore", (value, ...values) => {
+      __publicField$1(this, "moveBefore", (value, ...values) => {
         let toIndex = this.items.findIndex((item) => this.getItemValue(item) === value);
         if (toIndex === -1) return this;
         let indices = values.map((value2) => this.items.findIndex((item) => this.getItemValue(item) === value2)).sort((a, b2) => a - b2);
         return this.copy(move(this.items, indices, toIndex));
       });
-      __publicField$2(this, "moveAfter", (value, ...values) => {
+      __publicField$1(this, "moveAfter", (value, ...values) => {
         let toIndex = this.items.findIndex((item) => this.getItemValue(item) === value);
         if (toIndex === -1) return this;
         let indices = values.map((value2) => this.items.findIndex((item) => this.getItemValue(item) === value2)).sort((a, b2) => a - b2);
         return this.copy(move(this.items, indices, toIndex + 1));
       });
-      __publicField$2(this, "reorder", (fromIndex, toIndex) => {
+      __publicField$1(this, "reorder", (fromIndex, toIndex) => {
         return this.copy(move(this.items, [fromIndex], toIndex));
       });
-      __publicField$2(this, "compareValue", (a, b2) => {
+      __publicField$1(this, "compareValue", (a, b2) => {
         const indexA = this.indexOf(a);
         const indexB = this.indexOf(b2);
         if (indexA < indexB) return -1;
         if (indexA > indexB) return 1;
         return 0;
       });
-      __publicField$2(this, "range", (from2, to) => {
+      __publicField$1(this, "range", (from2, to) => {
         let keys = [];
         let key = from2;
         while (key != null) {
@@ -21403,7 +21337,7 @@ root: root2.ownerDocument
         }
         return [];
       });
-      __publicField$2(this, "getValueRange", (from2, to) => {
+      __publicField$1(this, "getValueRange", (from2, to) => {
         if (from2 && to) {
           if (this.compareValue(from2, to) <= 0) {
             return this.range(from2, to);
@@ -21412,7 +21346,7 @@ root: root2.ownerDocument
         }
         return [];
       });
-      __publicField$2(this, "toString", () => {
+      __publicField$1(this, "toString", () => {
         let result = "";
         for (const item of this.items) {
           const value = this.getItemValue(item);
@@ -21423,7 +21357,7 @@ root: root2.ownerDocument
         }
         return result;
       });
-      __publicField$2(this, "toJSON", () => {
+      __publicField$1(this, "toJSON", () => {
         return {
           size: this.size,
           first: this.firstValue,
@@ -21467,30 +21401,30 @@ get lastValue() {
   var Selection = class _Selection extends Set {
     constructor(values = []) {
       super(values);
-      __publicField$2(this, "selectionMode", "single");
-      __publicField$2(this, "deselectable", true);
-      __publicField$2(this, "copy", () => {
+      __publicField$1(this, "selectionMode", "single");
+      __publicField$1(this, "deselectable", true);
+      __publicField$1(this, "copy", () => {
         const clone2 = new _Selection([...this]);
         return this.sync(clone2);
       });
-      __publicField$2(this, "sync", (other) => {
+      __publicField$1(this, "sync", (other) => {
         other.selectionMode = this.selectionMode;
         other.deselectable = this.deselectable;
         return other;
       });
-      __publicField$2(this, "isEmpty", () => {
+      __publicField$1(this, "isEmpty", () => {
         return this.size === 0;
       });
-      __publicField$2(this, "isSelected", (value) => {
+      __publicField$1(this, "isSelected", (value) => {
         if (this.selectionMode === "none" || value == null) {
           return false;
         }
         return this.has(value);
       });
-      __publicField$2(this, "canSelect", (collection2, value) => {
+      __publicField$1(this, "canSelect", (collection2, value) => {
         return this.selectionMode !== "none" || !collection2.getItemDisabled(collection2.find(value));
       });
-      __publicField$2(this, "firstSelectedValue", (collection2) => {
+      __publicField$1(this, "firstSelectedValue", (collection2) => {
         let firstValue = null;
         for (let value of this) {
           if (!firstValue || collection2.compareValue(value, firstValue) < 0) {
@@ -21499,7 +21433,7 @@ get lastValue() {
         }
         return firstValue;
       });
-      __publicField$2(this, "lastSelectedValue", (collection2) => {
+      __publicField$1(this, "lastSelectedValue", (collection2) => {
         let lastValue = null;
         for (let value of this) {
           if (!lastValue || collection2.compareValue(value, lastValue) > 0) {
@@ -21508,7 +21442,7 @@ get lastValue() {
         }
         return lastValue;
       });
-      __publicField$2(this, "extendSelection", (collection2, anchorValue, targetValue) => {
+      __publicField$1(this, "extendSelection", (collection2, anchorValue, targetValue) => {
         if (this.selectionMode === "none") {
           return this;
         }
@@ -21527,7 +21461,7 @@ get lastValue() {
         }
         return selection;
       });
-      __publicField$2(this, "toggleSelection", (collection2, value) => {
+      __publicField$1(this, "toggleSelection", (collection2, value) => {
         if (this.selectionMode === "none") {
           return this;
         }
@@ -21542,7 +21476,7 @@ get lastValue() {
         }
         return selection;
       });
-      __publicField$2(this, "replaceSelection", (collection2, value) => {
+      __publicField$1(this, "replaceSelection", (collection2, value) => {
         if (this.selectionMode === "none") {
           return this;
         }
@@ -21555,7 +21489,7 @@ get lastValue() {
         const selection = new _Selection([value]);
         return this.sync(selection);
       });
-      __publicField$2(this, "setSelection", (values2) => {
+      __publicField$1(this, "setSelection", (values2) => {
         if (this.selectionMode === "none") {
           return this;
         }
@@ -21570,14 +21504,14 @@ get lastValue() {
         }
         return this.sync(selection);
       });
-      __publicField$2(this, "clearSelection", () => {
+      __publicField$1(this, "clearSelection", () => {
         const selection = this.copy();
         if (selection.deselectable && selection.size > 0) {
           selection.clear();
         }
         return selection;
       });
-      __publicField$2(this, "select", (collection2, value, forceToggle) => {
+      __publicField$1(this, "select", (collection2, value, forceToggle) => {
         if (this.selectionMode === "none") {
           return this;
         }
@@ -21593,12 +21527,12 @@ get lastValue() {
           return this.replaceSelection(collection2, value);
         }
       });
-      __publicField$2(this, "deselect", (value) => {
+      __publicField$1(this, "deselect", (value) => {
         const selection = this.copy();
         selection.delete(value);
         return selection;
       });
-      __publicField$2(this, "isEqual", (other) => {
+      __publicField$1(this, "isEqual", (other) => {
         return isEqual(Array.from(this), Array.from(other));
       });
     }
@@ -21936,38 +21870,38 @@ get lastValue() {
   var TreeCollection = class _TreeCollection {
     constructor(options) {
       this.options = options;
-      __publicField$2(this, "rootNode");
-      __publicField$2(this, "isEqual", (other) => {
+      __publicField$1(this, "rootNode");
+      __publicField$1(this, "isEqual", (other) => {
         return isEqual(this.rootNode, other.rootNode);
       });
-      __publicField$2(this, "getNodeChildren", (node2) => {
+      __publicField$1(this, "getNodeChildren", (node2) => {
         return this.options.nodeToChildren?.(node2) ?? fallbackMethods.nodeToChildren(node2) ?? [];
       });
-      __publicField$2(this, "resolveIndexPath", (valueOrIndexPath) => {
+      __publicField$1(this, "resolveIndexPath", (valueOrIndexPath) => {
         return typeof valueOrIndexPath === "string" ? this.getIndexPath(valueOrIndexPath) : valueOrIndexPath;
       });
-      __publicField$2(this, "resolveNode", (valueOrIndexPath) => {
+      __publicField$1(this, "resolveNode", (valueOrIndexPath) => {
         const indexPath = this.resolveIndexPath(valueOrIndexPath);
         return indexPath ? this.at(indexPath) : void 0;
       });
-      __publicField$2(this, "getNodeChildrenCount", (node2) => {
+      __publicField$1(this, "getNodeChildrenCount", (node2) => {
         return this.options.nodeToChildrenCount?.(node2) ?? fallbackMethods.nodeToChildrenCount(node2);
       });
-      __publicField$2(this, "getNodeValue", (node2) => {
+      __publicField$1(this, "getNodeValue", (node2) => {
         return this.options.nodeToValue?.(node2) ?? fallbackMethods.nodeToValue(node2);
       });
-      __publicField$2(this, "getNodeDisabled", (node2) => {
+      __publicField$1(this, "getNodeDisabled", (node2) => {
         return this.options.isNodeDisabled?.(node2) ?? fallbackMethods.isNodeDisabled(node2);
       });
-      __publicField$2(this, "stringify", (value) => {
+      __publicField$1(this, "stringify", (value) => {
         const node2 = this.findNode(value);
         if (!node2) return null;
         return this.stringifyNode(node2);
       });
-      __publicField$2(this, "stringifyNode", (node2) => {
+      __publicField$1(this, "stringifyNode", (node2) => {
         return this.options.nodeToString?.(node2) ?? fallbackMethods.nodeToString(node2);
       });
-      __publicField$2(this, "getFirstNode", (rootNode = this.rootNode) => {
+      __publicField$1(this, "getFirstNode", (rootNode = this.rootNode) => {
         let firstChild;
         visit(rootNode, {
           getChildren: this.getNodeChildren,
@@ -21980,7 +21914,7 @@ get lastValue() {
         });
         return firstChild;
       });
-      __publicField$2(this, "getLastNode", (rootNode = this.rootNode, opts = {}) => {
+      __publicField$1(this, "getLastNode", (rootNode = this.rootNode, opts = {}) => {
         let lastChild;
         visit(rootNode, {
           getChildren: this.getNodeChildren,
@@ -21994,42 +21928,42 @@ get lastValue() {
         });
         return lastChild;
       });
-      __publicField$2(this, "at", (indexPath) => {
+      __publicField$1(this, "at", (indexPath) => {
         return access(this.rootNode, indexPath, {
           getChildren: this.getNodeChildren
         });
       });
-      __publicField$2(this, "findNode", (value, rootNode = this.rootNode) => {
+      __publicField$1(this, "findNode", (value, rootNode = this.rootNode) => {
         return find(rootNode, {
           getChildren: this.getNodeChildren,
           predicate: (node2) => this.getNodeValue(node2) === value
         });
       });
-      __publicField$2(this, "findNodes", (values, rootNode = this.rootNode) => {
+      __publicField$1(this, "findNodes", (values, rootNode = this.rootNode) => {
         const v = new Set(values.filter((v2) => v2 != null));
         return findAll(rootNode, {
           getChildren: this.getNodeChildren,
           predicate: (node2) => v.has(this.getNodeValue(node2))
         });
       });
-      __publicField$2(this, "sort", (values) => {
+      __publicField$1(this, "sort", (values) => {
         return values.reduce((acc, value) => {
           const indexPath = this.getIndexPath(value);
           if (indexPath) acc.push({ value, indexPath });
           return acc;
         }, []).sort((a, b2) => compareIndexPaths(a.indexPath, b2.indexPath)).map(({ value }) => value);
       });
-      __publicField$2(this, "getIndexPath", (value) => {
+      __publicField$1(this, "getIndexPath", (value) => {
         return findIndexPath(this.rootNode, {
           getChildren: this.getNodeChildren,
           predicate: (node2) => this.getNodeValue(node2) === value
         });
       });
-      __publicField$2(this, "getValue", (indexPath) => {
+      __publicField$1(this, "getValue", (indexPath) => {
         const node2 = this.at(indexPath);
         return node2 ? this.getNodeValue(node2) : void 0;
       });
-      __publicField$2(this, "getValuePath", (indexPath) => {
+      __publicField$1(this, "getValuePath", (indexPath) => {
         if (!indexPath) return [];
         const valuePath = [];
         let currentPath = [...indexPath];
@@ -22040,24 +21974,24 @@ get lastValue() {
         }
         return valuePath;
       });
-      __publicField$2(this, "getDepth", (value) => {
+      __publicField$1(this, "getDepth", (value) => {
         const indexPath = findIndexPath(this.rootNode, {
           getChildren: this.getNodeChildren,
           predicate: (node2) => this.getNodeValue(node2) === value
         });
         return indexPath?.length ?? 0;
       });
-      __publicField$2(this, "isSameNode", (node2, other) => {
+      __publicField$1(this, "isSameNode", (node2, other) => {
         return this.getNodeValue(node2) === this.getNodeValue(other);
       });
-      __publicField$2(this, "isRootNode", (node2) => {
+      __publicField$1(this, "isRootNode", (node2) => {
         return this.isSameNode(node2, this.rootNode);
       });
-      __publicField$2(this, "contains", (parentIndexPath, valueIndexPath) => {
+      __publicField$1(this, "contains", (parentIndexPath, valueIndexPath) => {
         if (!parentIndexPath || !valueIndexPath) return false;
         return valueIndexPath.slice(0, parentIndexPath.length).every((_2, i) => parentIndexPath[i] === valueIndexPath[i]);
       });
-      __publicField$2(this, "getNextNode", (value, opts = {}) => {
+      __publicField$1(this, "getNextNode", (value, opts = {}) => {
         let found = false;
         let nextNode;
         visit(this.rootNode, {
@@ -22082,7 +22016,7 @@ get lastValue() {
         });
         return nextNode;
       });
-      __publicField$2(this, "getPreviousNode", (value, opts = {}) => {
+      __publicField$1(this, "getPreviousNode", (value, opts = {}) => {
         let previousNode;
         let found = false;
         visit(this.rootNode, {
@@ -22104,7 +22038,7 @@ get lastValue() {
         });
         return found ? previousNode : void 0;
       });
-      __publicField$2(this, "getParentNodes", (valueOrIndexPath) => {
+      __publicField$1(this, "getParentNodes", (valueOrIndexPath) => {
         const indexPath = this.resolveIndexPath(valueOrIndexPath)?.slice();
         if (!indexPath) return [];
         const result = [];
@@ -22117,7 +22051,7 @@ get lastValue() {
         }
         return result;
       });
-      __publicField$2(this, "getDescendantNodes", (valueOrIndexPath, options2) => {
+      __publicField$1(this, "getDescendantNodes", (valueOrIndexPath, options2) => {
         const parentNode = this.resolveNode(valueOrIndexPath);
         if (!parentNode) return [];
         const result = [];
@@ -22131,18 +22065,18 @@ get lastValue() {
         });
         return result;
       });
-      __publicField$2(this, "getDescendantValues", (valueOrIndexPath, options2) => {
+      __publicField$1(this, "getDescendantValues", (valueOrIndexPath, options2) => {
         const children = this.getDescendantNodes(valueOrIndexPath, options2);
         return children.map((child) => this.getNodeValue(child));
       });
-      __publicField$2(this, "getParentIndexPath", (indexPath) => {
+      __publicField$1(this, "getParentIndexPath", (indexPath) => {
         return indexPath.slice(0, -1);
       });
-      __publicField$2(this, "getParentNode", (valueOrIndexPath) => {
+      __publicField$1(this, "getParentNode", (valueOrIndexPath) => {
         const indexPath = this.resolveIndexPath(valueOrIndexPath);
         return indexPath ? this.at(this.getParentIndexPath(indexPath)) : void 0;
       });
-      __publicField$2(this, "visit", (opts) => {
+      __publicField$1(this, "visit", (opts) => {
         const { skip, ...rest } = opts;
         visit(this.rootNode, {
           ...rest,
@@ -22154,7 +22088,7 @@ get lastValue() {
           }
         });
       });
-      __publicField$2(this, "getPreviousSibling", (indexPath) => {
+      __publicField$1(this, "getPreviousSibling", (indexPath) => {
         const parentNode = this.getParentNode(indexPath);
         if (!parentNode) return;
         const siblings = this.getNodeChildren(parentNode);
@@ -22165,7 +22099,7 @@ get lastValue() {
         }
         return;
       });
-      __publicField$2(this, "getNextSibling", (indexPath) => {
+      __publicField$1(this, "getNextSibling", (indexPath) => {
         const parentNode = this.getParentNode(indexPath);
         if (!parentNode) return;
         const siblings = this.getNodeChildren(parentNode);
@@ -22176,26 +22110,26 @@ get lastValue() {
         }
         return;
       });
-      __publicField$2(this, "getSiblingNodes", (indexPath) => {
+      __publicField$1(this, "getSiblingNodes", (indexPath) => {
         const parentNode = this.getParentNode(indexPath);
         return parentNode ? this.getNodeChildren(parentNode) : [];
       });
-      __publicField$2(this, "getValues", (rootNode = this.rootNode) => {
+      __publicField$1(this, "getValues", (rootNode = this.rootNode) => {
         const values = flatMap(rootNode, {
           getChildren: this.getNodeChildren,
           transform: (node2) => [this.getNodeValue(node2)]
         });
         return values.slice(1);
       });
-      __publicField$2(this, "isValidDepth", (indexPath, depth) => {
+      __publicField$1(this, "isValidDepth", (indexPath, depth) => {
         if (depth == null) return true;
         if (typeof depth === "function") return depth(indexPath.length);
         return indexPath.length === depth;
       });
-      __publicField$2(this, "isBranchNode", (node2) => {
+      __publicField$1(this, "isBranchNode", (node2) => {
         return this.getNodeChildren(node2).length > 0 || this.getNodeChildrenCount(node2) != null;
       });
-      __publicField$2(this, "getBranchValues", (rootNode = this.rootNode, opts = {}) => {
+      __publicField$1(this, "getBranchValues", (rootNode = this.rootNode, opts = {}) => {
         let values = [];
         visit(rootNode, {
           getChildren: this.getNodeChildren,
@@ -22210,54 +22144,54 @@ get lastValue() {
         });
         return values;
       });
-      __publicField$2(this, "flatten", (rootNode = this.rootNode) => {
+      __publicField$1(this, "flatten", (rootNode = this.rootNode) => {
         return flatten$1(rootNode, { getChildren: this.getNodeChildren });
       });
-      __publicField$2(this, "_create", (node2, children) => {
+      __publicField$1(this, "_create", (node2, children) => {
         if (this.getNodeChildren(node2).length > 0 || children.length > 0) {
           return { ...node2, children };
         }
         return { ...node2 };
       });
-      __publicField$2(this, "_insert", (rootNode, indexPath, nodes) => {
+      __publicField$1(this, "_insert", (rootNode, indexPath, nodes) => {
         return this.copy(
           insert2(rootNode, { at: indexPath, nodes, getChildren: this.getNodeChildren, create: this._create })
         );
       });
-      __publicField$2(this, "copy", (rootNode) => {
+      __publicField$1(this, "copy", (rootNode) => {
         return new _TreeCollection({ ...this.options, rootNode });
       });
-      __publicField$2(this, "_replace", (rootNode, indexPath, node2) => {
+      __publicField$1(this, "_replace", (rootNode, indexPath, node2) => {
         return this.copy(
           replace(rootNode, { at: indexPath, node: node2, getChildren: this.getNodeChildren, create: this._create })
         );
       });
-      __publicField$2(this, "_move", (rootNode, indexPaths, to) => {
+      __publicField$1(this, "_move", (rootNode, indexPaths, to) => {
         return this.copy(move2(rootNode, { indexPaths, to, getChildren: this.getNodeChildren, create: this._create }));
       });
-      __publicField$2(this, "_remove", (rootNode, indexPaths) => {
+      __publicField$1(this, "_remove", (rootNode, indexPaths) => {
         return this.copy(remove(rootNode, { indexPaths, getChildren: this.getNodeChildren, create: this._create }));
       });
-      __publicField$2(this, "replace", (indexPath, node2) => {
+      __publicField$1(this, "replace", (indexPath, node2) => {
         return this._replace(this.rootNode, indexPath, node2);
       });
-      __publicField$2(this, "remove", (indexPaths) => {
+      __publicField$1(this, "remove", (indexPaths) => {
         return this._remove(this.rootNode, indexPaths);
       });
-      __publicField$2(this, "insertBefore", (indexPath, nodes) => {
+      __publicField$1(this, "insertBefore", (indexPath, nodes) => {
         const parentNode = this.getParentNode(indexPath);
         return parentNode ? this._insert(this.rootNode, indexPath, nodes) : void 0;
       });
-      __publicField$2(this, "insertAfter", (indexPath, nodes) => {
+      __publicField$1(this, "insertAfter", (indexPath, nodes) => {
         const parentNode = this.getParentNode(indexPath);
         if (!parentNode) return;
         const nextIndex2 = [...indexPath.slice(0, -1), indexPath[indexPath.length - 1] + 1];
         return this._insert(this.rootNode, nextIndex2, nodes);
       });
-      __publicField$2(this, "move", (fromIndexPaths, toIndexPath) => {
+      __publicField$1(this, "move", (fromIndexPaths, toIndexPath) => {
         return this._move(this.rootNode, fromIndexPaths, toIndexPath);
       });
-      __publicField$2(this, "filter", (predicate) => {
+      __publicField$1(this, "filter", (predicate) => {
         const filteredRoot = filter$1(this.rootNode, {
           predicate,
           getChildren: this.getNodeChildren,
@@ -22265,7 +22199,7 @@ get lastValue() {
         });
         return this.copy(filteredRoot);
       });
-      __publicField$2(this, "toJSON", () => {
+      __publicField$1(this, "toJSON", () => {
         return this.getValues(this.rootNode);
       });
       this.rootNode = options.rootNode;
@@ -22318,11 +22252,11 @@ get lastValue() {
   };
   var getControlId = (ctx) => ctx.ids?.control ?? `combobox:${ctx.id}:control`;
   var getInputId$2 = (ctx) => ctx.ids?.input ?? `combobox:${ctx.id}:input`;
-  var getContentId$6 = (ctx) => ctx.ids?.content ?? `combobox:${ctx.id}:content`;
+  var getContentId$5 = (ctx) => ctx.ids?.content ?? `combobox:${ctx.id}:content`;
   var getPositionerId$4 = (ctx) => ctx.ids?.positioner ?? `combobox:${ctx.id}:popper`;
   var getTriggerId$5 = (ctx) => ctx.ids?.trigger ?? `combobox:${ctx.id}:toggle-btn`;
   var getClearTriggerId$1 = (ctx) => ctx.ids?.clearTrigger ?? `combobox:${ctx.id}:clear-btn`;
-  var getContentEl$6 = (ctx) => ctx.getById(getContentId$6(ctx));
+  var getContentEl$5 = (ctx) => ctx.getById(getContentId$5(ctx));
   var getInputEl$2 = (ctx) => ctx.getById(getInputId$2(ctx));
   var getPositionerEl$4 = (ctx) => ctx.getById(getPositionerId$4(ctx));
   var getControlEl = (ctx) => ctx.getById(getControlId(ctx));
@@ -22331,7 +22265,7 @@ get lastValue() {
   var getItemEl$3 = (ctx, value) => {
     if (value == null) return null;
     const selector = `[role=option][data-value="${CSS.escape(value)}"]`;
-    return query(getContentEl$6(ctx), selector);
+    return query(getContentEl$5(ctx), selector);
   };
   var focusInputEl = (ctx) => {
     const inputEl = getInputEl$2(ctx);
@@ -23017,7 +22951,7 @@ get lastValue() {
       effects: {
         trackDismissableLayer({ send, prop, scope }) {
           if (prop("disableLayer")) return;
-          const contentEl = () => getContentEl$6(scope);
+          const contentEl = () => getContentEl$5(scope);
           return trackDismissableElement(contentEl, {
             type: "listbox",
             defer: true,
@@ -23054,7 +22988,7 @@ get lastValue() {
             const pointer = event.current().type.includes("POINTER");
             const highlightedValue = context.get("highlightedValue");
             if (pointer || !highlightedValue) return;
-            const contentEl = getContentEl$6(scope);
+            const contentEl = getContentEl$5(scope);
             const scrollToIndexFn = prop("scrollToIndexFn");
             if (scrollToIndexFn) {
               const highlightedIndex = prop("collection").indexOf(highlightedValue);
@@ -23124,7 +23058,7 @@ get lastValue() {
             const highlightedValue = context.get("highlightedValue");
             if (highlightedValue == null) return;
             const itemEl = getItemEl$3(scope, highlightedValue);
-            const contentEl = getContentEl$6(scope);
+            const contentEl = getContentEl$5(scope);
             const scrollToIndexFn = prop("scrollToIndexFn");
             if (scrollToIndexFn) {
               const highlightedIndex = prop("collection").indexOf(highlightedValue);
@@ -23240,7 +23174,7 @@ get lastValue() {
               getElement: () => getItemEl$3(scope, firstValue)
             });
           } else {
-            const contentEl = getContentEl$6(scope);
+            const contentEl = getContentEl$5(scope);
             if (!contentEl) return;
             contentEl.scrollTop = 0;
           }
@@ -23254,7 +23188,7 @@ get lastValue() {
           prop("onOpenChange")?.({ open: false, reason, value: context.get("value") });
         },
         highlightFirstItem({ context, prop, scope }) {
-          const exec = getContentEl$6(scope) ? queueMicrotask : raf;
+          const exec = getContentEl$5(scope) ? queueMicrotask : raf;
           exec(() => {
             const value = prop("collection").firstValue;
             if (value) context.set("highlightedValue", value);
@@ -23265,7 +23199,7 @@ get lastValue() {
           action(["highlightFirstItem"]);
         },
         highlightLastItem({ context, prop, scope }) {
-          const exec = getContentEl$6(scope) ? queueMicrotask : raf;
+          const exec = getContentEl$5(scope) ? queueMicrotask : raf;
           exec(() => {
             const value = prop("collection").lastValue;
             if (value) context.set("highlightedValue", value);
@@ -23590,10 +23524,10 @@ get lastValue() {
   var anatomy$h = createAnatomy("hoverCard").parts("arrow", "arrowTip", "trigger", "positioner", "content");
   anatomy$h.build();
   var getTriggerId$4 = (ctx) => ctx.ids?.trigger ?? `hover-card:${ctx.id}:trigger`;
-  var getContentId$5 = (ctx) => ctx.ids?.content ?? `hover-card:${ctx.id}:content`;
+  var getContentId$4 = (ctx) => ctx.ids?.content ?? `hover-card:${ctx.id}:content`;
   var getPositionerId$3 = (ctx) => ctx.ids?.positioner ?? `hover-card:${ctx.id}:popper`;
   var getTriggerEl$4 = (ctx) => ctx.getById(getTriggerId$4(ctx));
-  var getContentEl$5 = (ctx) => ctx.getById(getContentId$5(ctx));
+  var getContentEl$4 = (ctx) => ctx.getById(getContentId$4(ctx));
   var getPositionerEl$3 = (ctx) => ctx.getById(getPositionerId$3(ctx));
   var { not: not$5, and: and$6 } = createGuards();
   createMachine$4({
@@ -23811,7 +23745,7 @@ actions: ["setIsPointer"]
           });
         },
         trackDismissableElement({ send, scope, prop }) {
-          const getContentEl2 = () => getContentEl$5(scope);
+          const getContentEl2 = () => getContentEl$4(scope);
           return trackDismissableElement(getContentEl2, {
             type: "popover",
             defer: true,
@@ -24637,9 +24571,9 @@ actions: ["setIsPointer"]
   collection$1.empty = () => {
     return new ListCollection({ items: [] });
   };
-  var getContentId$4 = (ctx) => ctx.ids?.content ?? `select:${ctx.id}:content`;
+  var getContentId$3 = (ctx) => ctx.ids?.content ?? `select:${ctx.id}:content`;
   var getItemId$3 = (ctx, id2) => ctx.ids?.item?.(id2) ?? `select:${ctx.id}:option:${id2}`;
-  var getContentEl$4 = (ctx) => ctx.getById(getContentId$4(ctx));
+  var getContentEl$3 = (ctx) => ctx.getById(getContentId$3(ctx));
   var getItemEl$2 = (ctx, id2) => ctx.getById(getItemId$3(ctx, id2));
   var { guards: guards$1, createMachine: createMachine$2 } = setup();
   var { or: or$3 } = guards$1;
@@ -24802,7 +24736,7 @@ actions: ["setIsPointer"]
             if (highlightedValue == null) return;
             const modality = getInteractionModality();
             if (modality !== "keyboard") return;
-            const contentEl2 = getContentEl$4(scope);
+            const contentEl2 = getContentEl$3(scope);
             const scrollToIndexFn = prop("scrollToIndexFn");
             if (scrollToIndexFn) {
               const highlightedIndex = prop("collection").indexOf(highlightedValue);
@@ -24819,7 +24753,7 @@ actions: ["setIsPointer"]
             scrollIntoView(itemEl, { rootEl: contentEl2, block: "nearest" });
           };
           raf(() => exec(true));
-          const contentEl = () => getContentEl$4(scope);
+          const contentEl = () => getContentEl$3(scope);
           return observeAttributes(contentEl, {
             defer: true,
             attributes: ["data-activedescendant"],
@@ -24991,19 +24925,19 @@ actions: ["setIsPointer"]
   anatomy$e.build();
   var getTriggerId$3 = (ctx) => ctx.ids?.trigger ?? `menu:${ctx.id}:trigger`;
   var getContextTriggerId = (ctx) => ctx.ids?.contextTrigger ?? `menu:${ctx.id}:ctx-trigger`;
-  var getContentId$3 = (ctx) => ctx.ids?.content ?? `menu:${ctx.id}:content`;
+  var getContentId$2 = (ctx) => ctx.ids?.content ?? `menu:${ctx.id}:content`;
   var getPositionerId$2 = (ctx) => ctx.ids?.positioner ?? `menu:${ctx.id}:popper`;
   var getItemId$2 = (ctx, id2) => `${ctx.id}/${id2}`;
   var getItemValue = (el) => el?.dataset.value ?? null;
-  var getContentEl$3 = (ctx) => ctx.getById(getContentId$3(ctx));
+  var getContentEl$2 = (ctx) => ctx.getById(getContentId$2(ctx));
   var getPositionerEl$2 = (ctx) => ctx.getById(getPositionerId$2(ctx));
   var getTriggerEl$3 = (ctx) => ctx.getById(getTriggerId$3(ctx));
   var getItemEl$1 = (ctx, value) => value ? ctx.getById(getItemId$2(ctx, value)) : null;
   var getContextTriggerEl = (ctx) => ctx.getById(getContextTriggerId(ctx));
   var getElements$1 = (ctx) => {
-    const ownerId = CSS.escape(getContentId$3(ctx));
+    const ownerId = CSS.escape(getContentId$2(ctx));
     const selector = `[role^="menuitem"][data-ownedby=${ownerId}]:not([data-disabled])`;
-    return queryAll(getContentEl$3(ctx), selector);
+    return queryAll(getContentEl$2(ctx), selector);
   };
   var getFirstEl$1 = (ctx) => first(getElements$1(ctx));
   var getLastEl$1 = (ctx) => last(getElements$1(ctx));
@@ -25555,7 +25489,7 @@ isOpenControlled: ({ prop }) => prop("open") !== void 0,
           });
         },
         trackInteractOutside({ refs, scope, prop, context, send }) {
-          const getContentEl2 = () => getContentEl$3(scope);
+          const getContentEl2 = () => getContentEl$2(scope);
           let restoreFocus = true;
           return trackDismissableElement(getContentEl2, {
             type: "menu",
@@ -25613,11 +25547,11 @@ isOpenControlled: ({ prop }) => prop("open") !== void 0,
           const exec = () => {
             if (event.current().type.startsWith("ITEM_POINTER")) return;
             const itemEl = scope.getById(computed("highlightedId"));
-            const contentEl2 = getContentEl$3(scope);
+            const contentEl2 = getContentEl$2(scope);
             scrollIntoView(itemEl, { rootEl: contentEl2, block: "nearest" });
           };
           raf(() => exec());
-          const contentEl = () => getContentEl$3(scope);
+          const contentEl = () => getContentEl$2(scope);
           return observeAttributes(contentEl, {
             defer: true,
             attributes: ["aria-activedescendant"],
@@ -25673,7 +25607,7 @@ isOpenControlled: ({ prop }) => prop("open") !== void 0,
           }
         },
         setIntentPolygon({ context, scope, event }) {
-          const menu = getContentEl$3(scope);
+          const menu = getContentEl$2(scope);
           const placement = context.get("currentPlacement");
           if (!menu || !placement) return;
           const rect = menu.getBoundingClientRect();
@@ -25705,7 +25639,7 @@ isOpenControlled: ({ prop }) => prop("open") !== void 0,
         },
         focusMenu({ scope }) {
           raf(() => {
-            const contentEl = getContentEl$3(scope);
+            const contentEl = getContentEl$2(scope);
             const initialFocusEl = getInitialFocus({
               root: contentEl,
               enabled: !contains(contentEl, scope.getActiveElement()),
@@ -25717,7 +25651,7 @@ isOpenControlled: ({ prop }) => prop("open") !== void 0,
           });
         },
         highlightFirstItem({ context, scope }) {
-          const fn = getContentEl$3(scope) ? queueMicrotask : raf;
+          const fn = getContentEl$2(scope) ? queueMicrotask : raf;
           fn(() => {
             const first2 = getFirstEl$1(scope);
             if (!first2) return;
@@ -25725,7 +25659,7 @@ isOpenControlled: ({ prop }) => prop("open") !== void 0,
           });
         },
         highlightLastItem({ context, scope }) {
-          const fn = getContentEl$3(scope) ? queueMicrotask : raf;
+          const fn = getContentEl$2(scope) ? queueMicrotask : raf;
           fn(() => {
             const last2 = getLastEl$1(scope);
             if (!last2) return;
@@ -26991,887 +26925,9 @@ minimumSignificantDigits: 1,
     "defaultValue"
   ]);
   createProps$1()(["index"]);
-  const [ScrollAreaProvider, useScrollAreaContext] = createContext({
-    name: "ScrollAreaContext",
-    hookName: "useScrollAreaContext",
-    providerName: "<ScrollAreaProvider />"
-  });
-  const ScrollAreaContent$1 = reactExports.forwardRef((props, ref) => {
-    const scrollArea = useScrollAreaContext();
-    const mergedProps = mergeProps(scrollArea.getContentProps(), props);
-    return jsxRuntimeExports.jsx(ark.div, { ...mergedProps, ref });
-  });
-  ScrollAreaContent$1.displayName = "ScrollAreaContent";
-  const ScrollAreaCorner = reactExports.forwardRef((props, ref) => {
-    const scrollArea = useScrollAreaContext();
-    const mergedProps = mergeProps(scrollArea.getCornerProps(), props);
-    return jsxRuntimeExports.jsx(ark.div, { ...mergedProps, ref });
-  });
-  ScrollAreaCorner.displayName = "ScrollAreaCorner";
-  var __defProp$1 = Object.defineProperty;
-  var __defNormalProp$1 = (obj, key, value) => key in obj ? __defProp$1(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __publicField$1 = (obj, key, value) => __defNormalProp$1(obj, typeof key !== "symbol" ? key + "" : key, value);
   var anatomy$6 = createAnatomy("scroll-area").parts("root", "viewport", "content", "scrollbar", "thumb", "corner");
-  var parts$1 = anatomy$6.build();
-  var getRootId$2 = (ctx) => ctx.ids?.root ?? `scroll-area-${ctx.id}`;
-  var getViewportId = (ctx) => ctx.ids?.viewport ?? `scroll-area-${ctx.id}:viewport`;
-  var getContentId$2 = (ctx) => ctx.ids?.content ?? `scroll-area-${ctx.id}:content`;
-  var getRootEl$1 = (ctx) => ctx.getById(getRootId$2(ctx));
-  var getViewportEl = (ctx) => ctx.getById(getViewportId(ctx));
-  var getContentEl$2 = (ctx) => ctx.getById(getContentId$2(ctx));
-  var getScrollbarXEl = (ctx) => query(getRootEl$1(ctx), `[data-part=scrollbar][data-orientation=horizontal][data-ownedby="${getRootId$2(ctx)}"]`);
-  var getScrollbarYEl = (ctx) => query(getRootEl$1(ctx), `[data-part=scrollbar][data-orientation=vertical][data-ownedby="${getRootId$2(ctx)}"]`);
-  var getThumbXEl = (ctx) => query(getScrollbarXEl(ctx), `[data-part=thumb][data-orientation=horizontal][data-ownedby="${getRootId$2(ctx)}"]`);
-  var getThumbYEl = (ctx) => query(getScrollbarYEl(ctx), `[data-part=thumb][data-orientation=vertical][data-ownedby="${getRootId$2(ctx)}"]`);
-  var getCornerEl = (ctx) => query(getRootEl$1(ctx), `[data-part=corner][data-ownedby="${getRootId$2(ctx)}"]`);
-  function getScrollProgress(element, scrollThreshold) {
-    if (!element) return EMPTY_SCROLL_PROGRESS;
-    let progressX = 0;
-    let progressY = 0;
-    const maxScrollX = element.scrollWidth - element.clientWidth;
-    if (maxScrollX > scrollThreshold) {
-      progressX = Math.min(1, Math.max(0, element.scrollLeft / maxScrollX));
-    }
-    const maxScrollY = element.scrollHeight - element.clientHeight;
-    if (maxScrollY > scrollThreshold) {
-      progressY = Math.min(1, Math.max(0, element.scrollTop / maxScrollY));
-    }
-    return { x: progressX, y: progressY };
-  }
-  var EMPTY_SCROLL_PROGRESS = { x: 0, y: 0 };
-  var DURATION = 300;
-  var EASE_OUT_QUAD = (t) => t * (2 - t);
-  function smoothScroll(node2, options = {}) {
-    const { top, left, duration = DURATION, easing = EASE_OUT_QUAD, onComplete } = options;
-    if (!node2) return;
-    const state2 = {
-      startTime: 0,
-      startScrollTop: node2.scrollTop,
-      startScrollLeft: node2.scrollLeft,
-      targetScrollTop: top ?? node2.scrollTop,
-      targetScrollLeft: left ?? node2.scrollLeft
-    };
-    let cancelled = false;
-    const cleanup = () => {
-      if (state2.rafId) {
-        cancelAnimationFrame(state2.rafId);
-        state2.rafId = void 0;
-      }
-      cancelled = true;
-    };
-    const animate = (currentTime) => {
-      if (cancelled) return;
-      if (state2.startTime === 0) {
-        state2.startTime = currentTime;
-      }
-      const elapsed = currentTime - state2.startTime;
-      const progress2 = Math.min(elapsed / duration, 1);
-      const easedProgress = easing(progress2);
-      const deltaTop = state2.targetScrollTop - state2.startScrollTop;
-      const deltaLeft = state2.targetScrollLeft - state2.startScrollLeft;
-      node2.scrollTop = state2.startScrollTop + deltaTop * easedProgress;
-      node2.scrollLeft = state2.startScrollLeft + deltaLeft * easedProgress;
-      if (progress2 < 1) {
-        state2.rafId = requestAnimationFrame(animate);
-      } else {
-        onComplete?.();
-      }
-    };
-    state2.rafId = requestAnimationFrame(animate);
-    return cleanup;
-  }
-  function scrollTo(node2, options = {}) {
-    if (!node2) return;
-    const { top, left, behavior = "smooth", easing, duration } = options;
-    if (behavior === "smooth") {
-      smoothScroll(node2, { top, left, easing, duration });
-    } else {
-      const scrollOptions = compact({ behavior, top, left });
-      node2.scrollTo(scrollOptions);
-    }
-  }
-  function scrollToEdge(node2, edge, dir, behavior = "smooth", easing, duration) {
-    if (!node2) return;
-    const maxLeft = node2.scrollWidth - node2.clientWidth;
-    const maxTop = node2.scrollHeight - node2.clientHeight;
-    const isRtl = dir === "rtl";
-    let targetScrollTop;
-    let targetScrollLeft;
-    switch (edge) {
-      case "top":
-        targetScrollTop = 0;
-        break;
-      case "bottom":
-        targetScrollTop = maxTop;
-        break;
-      case "left":
-        if (isRtl) {
-          const negative = node2.scrollLeft <= 0;
-          targetScrollLeft = negative ? -maxLeft : 0;
-        } else {
-          targetScrollLeft = 0;
-        }
-        break;
-      case "right":
-        if (isRtl) {
-          const negative = node2.scrollLeft <= 0;
-          targetScrollLeft = negative ? 0 : maxLeft;
-        } else {
-          targetScrollLeft = maxLeft;
-        }
-        break;
-    }
-    if (behavior === "smooth") {
-      smoothScroll(node2, { top: targetScrollTop, left: targetScrollLeft, easing, duration });
-    } else {
-      const options = compact({ left: targetScrollLeft, top: targetScrollTop, behavior });
-      node2.scrollTo(options);
-    }
-  }
-  function connect$1(service, normalize2) {
-    const { state: state2, send, context, prop, scope } = service;
-    const dragging = state2.matches("dragging");
-    const hovering = context.get("hovering");
-    const cornerSize = context.get("cornerSize");
-    const thumbSize = context.get("thumbSize");
-    const hiddenState = context.get("hiddenState");
-    const atSides = context.get("atSides");
-    return {
-      isAtTop: atSides.top,
-      isAtBottom: atSides.bottom,
-      isAtLeft: atSides.left,
-      isAtRight: atSides.right,
-      hasOverflowX: !hiddenState.scrollbarXHidden,
-      hasOverflowY: !hiddenState.scrollbarYHidden,
-      getScrollProgress() {
-        return getScrollProgress(getViewportEl(scope), 0);
-      },
-      scrollToEdge(details) {
-        const { edge, behavior } = details;
-        return scrollToEdge(getViewportEl(scope), edge, prop("dir"), behavior);
-      },
-      scrollTo(details) {
-        return scrollTo(getViewportEl(scope), details);
-      },
-      getScrollbarState(props2) {
-        const horizontal = props2.orientation === "horizontal";
-        return {
-          hovering,
-          dragging,
-          scrolling: context.get(horizontal ? "scrollingX" : "scrollingY"),
-          hidden: horizontal ? hiddenState.scrollbarXHidden : hiddenState.scrollbarYHidden
-        };
-      },
-      getRootProps() {
-        return normalize2.element({
-          ...parts$1.root.attrs,
-          id: getRootId$2(scope),
-          dir: prop("dir"),
-          role: "presentation",
-          "data-overflow-x": dataAttr$1(!hiddenState.scrollbarXHidden),
-          "data-overflow-y": dataAttr$1(!hiddenState.scrollbarYHidden),
-          onPointerEnter(event) {
-            const target = getEventTarget(event);
-            if (!contains(event.currentTarget, target)) return;
-            send({ type: "root.pointerenter", pointerType: event.pointerType });
-          },
-          onPointerMove(event) {
-            const target = getEventTarget(event);
-            if (!contains(event.currentTarget, target)) return;
-            send({ type: "root.pointerenter", pointerType: event.pointerType });
-          },
-          onPointerDown({ pointerType }) {
-            send({ type: "root.pointerdown", pointerType });
-          },
-          onPointerLeave(event) {
-            if (contains(event.currentTarget, event.relatedTarget)) return;
-            send({ type: "root.pointerleave" });
-          },
-          style: {
-            position: "relative",
-            "--corner-width": toPx$1(cornerSize?.width),
-            "--corner-height": toPx$1(cornerSize?.height),
-            "--thumb-width": toPx$1(thumbSize?.width),
-            "--thumb-height": toPx$1(thumbSize?.height)
-          }
-        });
-      },
-      getViewportProps() {
-        const handleUserInteraction = () => {
-          send({ type: "user.scroll" });
-        };
-        return normalize2.element({
-          ...parts$1.viewport.attrs,
-          role: "presentation",
-          "data-ownedby": getRootId$2(scope),
-          id: getViewportId(scope),
-          "data-at-top": dataAttr$1(atSides.top),
-          "data-at-bottom": dataAttr$1(atSides.bottom),
-          "data-at-left": dataAttr$1(atSides.left),
-          "data-at-right": dataAttr$1(atSides.right),
-          "data-overflow-x": dataAttr$1(!hiddenState.scrollbarXHidden),
-          "data-overflow-y": dataAttr$1(!hiddenState.scrollbarYHidden),
-          tabIndex: hiddenState.scrollbarXHidden || hiddenState.scrollbarYHidden ? void 0 : 0,
-          style: {
-            overflow: "auto"
-          },
-          onScroll(event) {
-            send({ type: "viewport.scroll", target: event.currentTarget });
-          },
-          onWheel: handleUserInteraction,
-          onTouchMove: handleUserInteraction,
-          onPointerMove: handleUserInteraction,
-          onPointerEnter: handleUserInteraction,
-          onKeyDown: handleUserInteraction
-        });
-      },
-      getContentProps() {
-        return normalize2.element({
-          ...parts$1.content.attrs,
-          id: getContentId$2(scope),
-          role: "presentation",
-          "data-overflow-x": dataAttr$1(!hiddenState.scrollbarXHidden),
-          "data-overflow-y": dataAttr$1(!hiddenState.scrollbarYHidden),
-          style: {
-            minWidth: "fit-content"
-          }
-        });
-      },
-      getScrollbarProps(props2 = {}) {
-        const { orientation = "vertical" } = props2;
-        return normalize2.element({
-          ...parts$1.scrollbar.attrs,
-          "data-ownedby": getRootId$2(scope),
-          "data-orientation": orientation,
-          "data-scrolling": dataAttr$1(context.get(orientation === "horizontal" ? "scrollingX" : "scrollingY")),
-          "data-hover": dataAttr$1(hovering),
-          "data-dragging": dataAttr$1(dragging),
-          "data-overflow-x": dataAttr$1(!hiddenState.scrollbarXHidden),
-          "data-overflow-y": dataAttr$1(!hiddenState.scrollbarYHidden),
-          onPointerUp() {
-            send({ type: "scrollbar.pointerup", orientation });
-          },
-          onPointerDown(event) {
-            if (event.button !== 0) {
-              return;
-            }
-            if (event.currentTarget !== event.target) {
-              return;
-            }
-            const point = getEventPoint(event);
-            send({ type: "scrollbar.pointerdown", orientation, point });
-            event.stopPropagation();
-          },
-          style: {
-            position: "absolute",
-            touchAction: "none",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            ...orientation === "vertical" && {
-              top: 0,
-              bottom: `var(--corner-height)`,
-              insetInlineEnd: 0
-            },
-            ...orientation === "horizontal" && {
-              insetInlineStart: 0,
-              insetInlineEnd: `var(--corner-width)`,
-              bottom: 0
-            }
-          }
-        });
-      },
-      getThumbProps(props2 = {}) {
-        const { orientation = "vertical" } = props2;
-        return normalize2.element({
-          ...parts$1.thumb.attrs,
-          "data-ownedby": getRootId$2(scope),
-          "data-orientation": orientation,
-          "data-hover": dataAttr$1(hovering),
-          "data-dragging": dataAttr$1(dragging),
-          onPointerDown(event) {
-            if (event.button !== 0) return;
-            const point = getEventPoint(event);
-            send({ type: "thumb.pointerdown", orientation, point });
-          },
-          style: {
-            ...orientation === "vertical" && {
-              height: "var(--thumb-height)"
-            },
-            ...orientation === "horizontal" && {
-              width: "var(--thumb-width)"
-            }
-          }
-        });
-      },
-      getCornerProps() {
-        return normalize2.element({
-          ...parts$1.corner.attrs,
-          "data-ownedby": getRootId$2(scope),
-          "data-hover": dataAttr$1(hovering),
-          "data-state": hiddenState.cornerHidden ? "hidden" : "visible",
-          "data-overflow-x": dataAttr$1(!hiddenState.scrollbarXHidden),
-          "data-overflow-y": dataAttr$1(!hiddenState.scrollbarYHidden),
-          style: {
-            position: "absolute",
-            bottom: 0,
-            insetInlineEnd: 0,
-            width: "var(--corner-width)",
-            height: "var(--corner-height)"
-          }
-        });
-      }
-    };
-  }
-  function getScrollOffset(element, prop, axis) {
-    if (!element) return 0;
-    const styles = getComputedStyle$3(element);
-    const propAxis = axis === "x" ? "Inline" : "Block";
-    if (axis === "x" && prop === "margin") {
-      return parseFloat(styles[`${prop}InlineStart`]) * 2;
-    }
-    return parseFloat(styles[`${prop}${propAxis}Start`]) + parseFloat(styles[`${prop}${propAxis}End`]);
-  }
-  function getScrollSides(node2, dir) {
-    const scrollTop = node2.scrollTop;
-    const scrollLeft = node2.scrollLeft;
-    const isRtl = dir === "rtl";
-    const threshold = 1;
-    const hasVerticalScroll = node2.scrollHeight - node2.clientHeight > threshold;
-    const hasHorizontalScroll = node2.scrollWidth - node2.clientWidth > threshold;
-    const maxScrollLeft = node2.scrollWidth - node2.clientWidth;
-    const maxScrollTop = node2.scrollHeight - node2.clientHeight;
-    let atLeft = false;
-    let atRight = false;
-    let atTop = false;
-    let atBottom = false;
-    if (hasHorizontalScroll) {
-      if (isRtl) {
-        if (scrollLeft <= 0) {
-          atLeft = Math.abs(scrollLeft) >= maxScrollLeft - threshold;
-          atRight = Math.abs(scrollLeft) <= threshold;
-        } else {
-          atLeft = scrollLeft <= threshold;
-          atRight = scrollLeft >= maxScrollLeft - threshold;
-        }
-      } else {
-        atLeft = scrollLeft <= threshold;
-        atRight = scrollLeft >= maxScrollLeft - threshold;
-      }
-    }
-    if (hasVerticalScroll) {
-      atTop = scrollTop <= threshold;
-      atBottom = scrollTop >= maxScrollTop - threshold;
-    }
-    return {
-      top: atTop,
-      right: atRight,
-      bottom: atBottom,
-      left: atLeft
-    };
-  }
-  var EMPTY = 0;
-  var Timeout = class {
-    constructor() {
-      __publicField$1(this, "currentId", EMPTY);
-      __publicField$1(this, "clear", () => {
-        if (this.currentId !== EMPTY) {
-          clearTimeout(this.currentId);
-          this.currentId = EMPTY;
-        }
-      });
-      __publicField$1(this, "disposeEffect", () => {
-        return this.clear;
-      });
-    }
-    start(delay2, fn) {
-      this.clear();
-      this.currentId = setTimeout(() => {
-        this.currentId = EMPTY;
-        fn();
-      }, delay2);
-    }
-    isStarted() {
-      return this.currentId !== EMPTY;
-    }
-  };
-  var MIN_THUMB_SIZE = 20;
-  var SCROLL_TIMEOUT = 1e3;
-  var machine$1 = createMachine$4({
-    props({ props: props2 }) {
-      ensureProps(props2, ["id"]);
-      return props2;
-    },
-    context({ bindable }) {
-      return {
-        scrollingX: bindable(() => ({ defaultValue: false })),
-        scrollingY: bindable(() => ({ defaultValue: false })),
-        hovering: bindable(() => ({ defaultValue: false })),
-        dragging: bindable(() => ({ defaultValue: false })),
-        touchModality: bindable(() => ({ defaultValue: false })),
-        atSides: bindable(() => ({
-          defaultValue: { top: true, right: false, bottom: false, left: true }
-        })),
-        cornerSize: bindable(() => ({
-          defaultValue: { width: 0, height: 0 }
-        })),
-        thumbSize: bindable(() => ({
-          defaultValue: { width: 0, height: 0 }
-        })),
-        hiddenState: bindable(() => ({
-          defaultValue: {
-            scrollbarYHidden: false,
-            scrollbarXHidden: false,
-            cornerHidden: false
-          },
-          hash(a) {
-            return `Y:${a.scrollbarYHidden} X:${a.scrollbarXHidden} C:${a.cornerHidden}`;
-          }
-        }))
-      };
-    },
-    refs() {
-      return {
-        orientation: "vertical",
-        scrollPosition: { x: 0, y: 0 },
-        scrollYTimeout: new Timeout(),
-        scrollXTimeout: new Timeout(),
-        scrollEndTimeout: new Timeout(),
-        startX: 0,
-        startY: 0,
-        startScrollTop: 0,
-        startScrollLeft: 0,
-        programmaticScroll: true
-      };
-    },
-    initialState() {
-      return "idle";
-    },
-    watch({ track, prop, context, send }) {
-      track([() => prop("dir"), () => context.hash("hiddenState")], () => {
-        send({ type: "thumb.measure" });
-      });
-    },
-    effects: ["trackContentResize", "trackViewportVisibility", "trackWheelEvent"],
-    entry: ["checkHovering"],
-    exit: ["clearTimeouts"],
-    on: {
-      "thumb.measure": {
-        actions: ["setThumbSize"]
-      },
-      "viewport.scroll": {
-        actions: ["setThumbSize", "setScrolling", "setProgrammaticScroll"]
-      },
-      "root.pointerenter": {
-        actions: ["setTouchModality", "setHovering"]
-      },
-      "root.pointerdown": {
-        actions: ["setTouchModality"]
-      },
-      "root.pointerleave": {
-        actions: ["clearHovering"]
-      }
-    },
-    states: {
-      idle: {
-        on: {
-          "scrollbar.pointerdown": {
-            target: "dragging",
-            actions: ["scrollToPointer", "startDragging"]
-          },
-          "thumb.pointerdown": {
-            target: "dragging",
-            actions: ["startDragging"]
-          }
-        }
-      },
-      dragging: {
-        effects: ["trackPointerMove"],
-        on: {
-          "thumb.pointermove": {
-            actions: ["setDraggingScroll"]
-          },
-          "scrollbar.pointerup": {
-            target: "idle",
-            actions: ["stopDragging"]
-          },
-          "thumb.pointerup": {
-            target: "idle",
-            actions: ["clearScrolling", "stopDragging"]
-          }
-        }
-      }
-    },
-    implementations: {
-      actions: {
-        setTouchModality({ context, event }) {
-          context.set("touchModality", event.pointerType === "touch");
-        },
-        setHovering({ context }) {
-          context.set("hovering", true);
-        },
-        clearHovering({ context }) {
-          context.set("hovering", false);
-        },
-        setProgrammaticScroll({ refs }) {
-          const scrollEndTimeout = refs.get("scrollEndTimeout");
-          scrollEndTimeout.start(100, () => {
-            refs.set("programmaticScroll", true);
-          });
-        },
-        clearScrolling({ context, event }) {
-          context.set(event.orientation === "vertical" ? "scrollingY" : "scrollingX", false);
-        },
-        setThumbSize({ context, scope, prop }) {
-          const viewportEl = getViewportEl(scope);
-          if (!viewportEl) return;
-          const scrollableContentHeight = viewportEl.scrollHeight;
-          const scrollableContentWidth = viewportEl.scrollWidth;
-          if (scrollableContentHeight === 0 || scrollableContentWidth === 0) return;
-          const scrollbarYEl = getScrollbarYEl(scope);
-          const scrollbarXEl = getScrollbarXEl(scope);
-          const thumbYEl = getThumbYEl(scope);
-          const thumbXEl = getThumbXEl(scope);
-          const viewportHeight = viewportEl.clientHeight;
-          const viewportWidth = viewportEl.clientWidth;
-          const scrollTop = viewportEl.scrollTop;
-          const scrollLeft = viewportEl.scrollLeft;
-          const scrollbarYHidden = viewportHeight >= scrollableContentHeight;
-          const scrollbarXHidden = viewportWidth >= scrollableContentWidth;
-          const ratioX = viewportWidth / scrollableContentWidth;
-          const ratioY = viewportHeight / scrollableContentHeight;
-          const nextWidth = scrollbarXHidden ? 0 : viewportWidth;
-          const nextHeight = scrollbarYHidden ? 0 : viewportHeight;
-          const scrollbarXOffset = getScrollOffset(scrollbarXEl, "padding", "x");
-          const scrollbarYOffset = getScrollOffset(scrollbarYEl, "padding", "y");
-          const thumbXOffset = getScrollOffset(thumbXEl, "margin", "x");
-          const thumbYOffset = getScrollOffset(thumbYEl, "margin", "y");
-          const idealNextWidth = nextWidth - scrollbarXOffset - thumbXOffset;
-          const idealNextHeight = nextHeight - scrollbarYOffset - thumbYOffset;
-          const maxNextWidth = scrollbarXEl ? Math.min(scrollbarXEl.offsetWidth, idealNextWidth) : idealNextWidth;
-          const maxNextHeight = scrollbarYEl ? Math.min(scrollbarYEl.offsetHeight, idealNextHeight) : idealNextHeight;
-          const clampedNextWidth = Math.max(MIN_THUMB_SIZE, maxNextWidth * ratioX);
-          const clampedNextHeight = Math.max(MIN_THUMB_SIZE, maxNextHeight * ratioY);
-          context.set("thumbSize", (prevSize) => {
-            if (prevSize.height === clampedNextHeight && prevSize.width === clampedNextWidth) {
-              return prevSize;
-            }
-            return {
-              width: clampedNextWidth,
-              height: clampedNextHeight
-            };
-          });
-          if (scrollbarYEl && thumbYEl) {
-            const maxThumbOffsetY = scrollbarYEl.offsetHeight - clampedNextHeight - scrollbarYOffset - thumbYOffset;
-            const scrollRatioY = scrollTop / (scrollableContentHeight - viewportHeight);
-            const thumbOffsetY = Math.min(maxThumbOffsetY, Math.max(0, scrollRatioY * maxThumbOffsetY));
-            thumbYEl.style.transform = `translate3d(0,${thumbOffsetY}px,0)`;
-          }
-          if (scrollbarXEl && thumbXEl) {
-            const maxThumbOffsetX = scrollbarXEl.offsetWidth - clampedNextWidth - scrollbarXOffset - thumbXOffset;
-            const scrollRatioX = scrollLeft / (scrollableContentWidth - viewportWidth);
-            const thumbOffsetX = prop("dir") === "rtl" ? clampValue(scrollRatioX * maxThumbOffsetX, -maxThumbOffsetX, 0) : clampValue(scrollRatioX * maxThumbOffsetX, 0, maxThumbOffsetX);
-            thumbXEl.style.transform = `translate3d(${thumbOffsetX}px,0,0)`;
-          }
-          const cornerEl = getCornerEl(scope);
-          if (cornerEl) {
-            if (scrollbarXHidden || scrollbarYHidden) {
-              context.set("cornerSize", { width: 0, height: 0 });
-            } else if (!scrollbarXHidden && !scrollbarYHidden) {
-              const width = scrollbarYEl?.offsetWidth || 0;
-              const height = scrollbarXEl?.offsetHeight || 0;
-              context.set("cornerSize", { width, height });
-            }
-          }
-          context.set("hiddenState", (prevState) => {
-            const cornerHidden = scrollbarYHidden || scrollbarXHidden;
-            if (prevState.scrollbarYHidden === scrollbarYHidden && prevState.scrollbarXHidden === scrollbarXHidden && prevState.cornerHidden === cornerHidden) {
-              return prevState;
-            }
-            return {
-              scrollbarYHidden,
-              scrollbarXHidden,
-              cornerHidden
-            };
-          });
-          context.set("atSides", (prev2) => {
-            const next2 = getScrollSides(viewportEl, prop("dir"));
-            if (isEqual(prev2, next2)) return prev2;
-            return next2;
-          });
-        },
-        checkHovering({ scope, context }) {
-          const viewportEl = getViewportEl(scope);
-          if (viewportEl?.matches(":hover")) {
-            context.set("hovering", true);
-          }
-        },
-        setScrolling({ event, refs, context, prop }) {
-          const scrollPosition = {
-            x: event.target.scrollLeft,
-            y: event.target.scrollTop
-          };
-          const scrollPositionRef = refs.get("scrollPosition");
-          const offsetX = scrollPosition.x - scrollPositionRef.x;
-          const offsetY = scrollPosition.y - scrollPositionRef.y;
-          refs.set("scrollPosition", scrollPosition);
-          context.set("atSides", (prev2) => {
-            const next2 = getScrollSides(event.target, prop("dir"));
-            if (isEqual(prev2, next2)) return prev2;
-            return next2;
-          });
-          if (offsetY !== 0) {
-            context.set("scrollingY", true);
-            refs.get("scrollYTimeout").start(SCROLL_TIMEOUT, () => {
-              context.set("scrollingY", false);
-            });
-          }
-          if (offsetX !== 0) {
-            context.set("scrollingX", true);
-            refs.get("scrollXTimeout").start(SCROLL_TIMEOUT, () => {
-              context.set("scrollingX", false);
-            });
-          }
-        },
-        scrollToPointer({ event, scope, prop }) {
-          const viewportEl = getViewportEl(scope);
-          if (!viewportEl) return;
-          const thumbYRef = getThumbYEl(scope);
-          const scrollbarYRef = getScrollbarYEl(scope);
-          const thumbXRef = getThumbXEl(scope);
-          const scrollbarXRef = getScrollbarXEl(scope);
-          const client2 = event.point;
-          if (thumbYRef && scrollbarYRef && event.orientation === "vertical") {
-            const thumbYOffset = getScrollOffset(thumbYRef, "margin", "y");
-            const scrollbarYOffset = getScrollOffset(scrollbarYRef, "padding", "y");
-            const thumbHeight = thumbYRef.offsetHeight;
-            const trackRectY = scrollbarYRef.getBoundingClientRect();
-            const clickY = client2.y - trackRectY.top - thumbHeight / 2 - scrollbarYOffset + thumbYOffset / 2;
-            const scrollableContentHeight = viewportEl.scrollHeight;
-            const viewportHeight = viewportEl.clientHeight;
-            const maxThumbOffsetY = scrollbarYRef.offsetHeight - thumbHeight - scrollbarYOffset - thumbYOffset;
-            const scrollRatioY = clickY / maxThumbOffsetY;
-            const newScrollTop = scrollRatioY * (scrollableContentHeight - viewportHeight);
-            viewportEl.scrollTop = newScrollTop;
-          }
-          if (thumbXRef && scrollbarXRef && event.orientation === "horizontal") {
-            const thumbXOffset = getScrollOffset(thumbXRef, "margin", "x");
-            const scrollbarXOffset = getScrollOffset(scrollbarXRef, "padding", "x");
-            const thumbWidth = thumbXRef.offsetWidth;
-            const trackRectX = scrollbarXRef.getBoundingClientRect();
-            const clickX = client2.x - trackRectX.left - thumbWidth / 2 - scrollbarXOffset + thumbXOffset / 2;
-            const scrollableContentWidth = viewportEl.scrollWidth;
-            const viewportWidth = viewportEl.clientWidth;
-            const maxThumbOffsetX = scrollbarXRef.offsetWidth - thumbWidth - scrollbarXOffset - thumbXOffset;
-            const scrollRatioX = clickX / maxThumbOffsetX;
-            let newScrollLeft;
-            if (prop("dir") === "rtl") {
-              newScrollLeft = (1 - scrollRatioX) * (scrollableContentWidth - viewportWidth);
-              if (viewportEl.scrollLeft <= 0) {
-                newScrollLeft = -newScrollLeft;
-              }
-            } else {
-              newScrollLeft = scrollRatioX * (scrollableContentWidth - viewportWidth);
-            }
-            viewportEl.scrollLeft = newScrollLeft;
-          }
-        },
-        startDragging({ event, refs, scope }) {
-          refs.set("startX", event.point.x);
-          refs.set("startY", event.point.y);
-          refs.set("orientation", event.orientation);
-          const viewportEl = getViewportEl(scope);
-          if (!viewportEl) return;
-          refs.set("startScrollTop", viewportEl.scrollTop);
-          refs.set("startScrollLeft", viewportEl.scrollLeft);
-        },
-        setDraggingScroll({ event, refs, scope, context }) {
-          const startY = refs.get("startY");
-          const startX = refs.get("startX");
-          const startScrollTop = refs.get("startScrollTop");
-          const startScrollLeft = refs.get("startScrollLeft");
-          const client2 = event.point;
-          const deltaY = client2.y - startY;
-          const deltaX = client2.x - startX;
-          const viewportEl = getViewportEl(scope);
-          if (!viewportEl) return;
-          const scrollableContentHeight = viewportEl.scrollHeight;
-          const viewportHeight = viewportEl.clientHeight;
-          const scrollableContentWidth = viewportEl.scrollWidth;
-          const viewportWidth = viewportEl.clientWidth;
-          const orientation = refs.get("orientation");
-          const thumbYEl = getThumbYEl(scope);
-          const scrollbarYEl = getScrollbarYEl(scope);
-          if (thumbYEl && scrollbarYEl && orientation === "vertical") {
-            const scrollbarYOffset = getScrollOffset(scrollbarYEl, "padding", "y");
-            const thumbYOffset = getScrollOffset(thumbYEl, "margin", "y");
-            const thumbHeight = thumbYEl.offsetHeight;
-            const maxThumbOffsetY = scrollbarYEl.offsetHeight - thumbHeight - scrollbarYOffset - thumbYOffset;
-            const scrollRatioY = deltaY / maxThumbOffsetY;
-            viewportEl.scrollTop = startScrollTop + scrollRatioY * (scrollableContentHeight - viewportHeight);
-            context.set("scrollingY", true);
-            refs.get("scrollYTimeout").start(SCROLL_TIMEOUT, () => {
-              context.set("scrollingY", false);
-            });
-          }
-          const thumbXEl = getThumbXEl(scope);
-          const scrollbarXEl = getScrollbarXEl(scope);
-          if (thumbXEl && scrollbarXEl && orientation === "horizontal") {
-            const scrollbarXOffset = getScrollOffset(scrollbarXEl, "padding", "x");
-            const thumbXOffset = getScrollOffset(thumbXEl, "margin", "x");
-            const thumbWidth = thumbXEl.offsetWidth;
-            const maxThumbOffsetX = scrollbarXEl.offsetWidth - thumbWidth - scrollbarXOffset - thumbXOffset;
-            const scrollRatioX = deltaX / maxThumbOffsetX;
-            viewportEl.scrollLeft = startScrollLeft + scrollRatioX * (scrollableContentWidth - viewportWidth);
-            context.set("scrollingX", true);
-            refs.get("scrollXTimeout").start(SCROLL_TIMEOUT, () => {
-              context.set("scrollingX", false);
-            });
-          }
-        },
-        stopDragging({ refs }) {
-          refs.set("orientation", null);
-        },
-        clearTimeouts({ refs }) {
-          refs.get("scrollYTimeout").clear();
-          refs.get("scrollXTimeout").clear();
-          refs.get("scrollEndTimeout").clear();
-        }
-      },
-      effects: {
-        trackContentResize({ scope, send }) {
-          const contentEl = getContentEl$2(scope);
-          const rootEl = getRootEl$1(scope);
-          if (!contentEl || !rootEl) return;
-          const win = scope.getWin();
-          const obs = new win.ResizeObserver(() => {
-            setTimeout(() => {
-              send({ type: "thumb.measure" });
-            }, 1);
-          });
-          obs.observe(contentEl);
-          obs.observe(rootEl);
-          return () => {
-            obs.disconnect();
-          };
-        },
-        trackViewportVisibility({ scope, send }) {
-          const win = scope.getWin();
-          const viewportEl = getViewportEl(scope);
-          if (!viewportEl) return;
-          const observer = new win.IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.intersectionRatio > 0) {
-                send({ type: "thumb.measure" });
-                observer.disconnect();
-              }
-            });
-          });
-          observer.observe(viewportEl);
-          return () => {
-            observer.disconnect();
-          };
-        },
-        trackWheelEvent({ scope }) {
-          const scrollbarYEl = getScrollbarYEl(scope);
-          const scrollbarXEl = getScrollbarXEl(scope);
-          if (!scrollbarYEl && !scrollbarXEl) return;
-          const onWheel = (event) => {
-            const viewportEl = getViewportEl(scope);
-            if (!viewportEl || event.ctrlKey) return;
-            const orientation = event.currentTarget.dataset.orientation;
-            if (orientation === "vertical") {
-              const canScrollY = viewportEl.scrollHeight > viewportEl.clientHeight;
-              const atTop = viewportEl.scrollTop === 0 && event.deltaY < 0;
-              const atBottom = viewportEl.scrollTop === viewportEl.scrollHeight - viewportEl.clientHeight && event.deltaY > 0;
-              const shouldScroll = canScrollY && event.deltaY !== 0 && !(atTop || atBottom);
-              if (!shouldScroll) return;
-              event.preventDefault();
-              viewportEl.scrollTop += event.deltaY;
-            } else if (orientation === "horizontal") {
-              const canScrollX = viewportEl.scrollWidth > viewportEl.clientWidth;
-              const atLeft = viewportEl.scrollLeft === 0 && event.deltaX < 0;
-              const atRight = viewportEl.scrollLeft === viewportEl.scrollWidth - viewportEl.clientWidth && event.deltaX > 0;
-              const shouldScroll = canScrollX && event.deltaX !== 0 && !(atLeft || atRight);
-              if (!shouldScroll) return;
-              event.preventDefault();
-              viewportEl.scrollLeft += event.deltaX;
-            }
-          };
-          return callAll(
-            scrollbarYEl && addDomEvent$1(scrollbarYEl, "wheel", onWheel, { passive: false }),
-            scrollbarXEl && addDomEvent$1(scrollbarXEl, "wheel", onWheel, { passive: false })
-          );
-        },
-        trackPointerMove({ scope, send, refs }) {
-          const doc = scope.getDoc();
-          const orientation = refs.get("orientation");
-          return trackPointerMove(doc, {
-            onPointerMove({ point }) {
-              send({ type: "thumb.pointermove", orientation, point });
-            },
-            onPointerUp() {
-              send({ type: "thumb.pointerup", orientation });
-            }
-          });
-        }
-      }
-    }
-  });
+  anatomy$6.build();
   createProps$1()(["dir", "getRootNode", "ids", "id"]);
-  const useScrollArea = (props) => {
-    const id2 = reactExports.useId();
-    const { getRootNode: getRootNode2 } = useEnvironmentContext();
-    const { dir } = useLocaleContext();
-    const context = {
-      id: id2,
-      dir,
-      getRootNode: getRootNode2,
-      ...props
-    };
-    const service = useMachine(machine$1, context);
-    return connect$1(service, normalizeProps);
-  };
-  const splitRootProps$1 = createSplitProps();
-  const ScrollAreaRoot$1 = reactExports.forwardRef((props, ref) => {
-    const [useScrollAreaProps, localProps] = splitRootProps$1(props, ["id", "ids"]);
-    const scrollArea = useScrollArea(useScrollAreaProps);
-    const mergedProps = mergeProps(scrollArea.getRootProps(), localProps);
-    return jsxRuntimeExports.jsx(ScrollAreaProvider, { value: scrollArea, children: jsxRuntimeExports.jsx(ark.div, { ...mergedProps, ref }) });
-  });
-  ScrollAreaRoot$1.displayName = "ScrollAreaRoot";
-  const splitRootProviderProps$1 = createSplitProps();
-  const ScrollAreaRootProvider = reactExports.forwardRef((props, ref) => {
-    const [{ value: scrollArea }, localProps] = splitRootProviderProps$1(props, ["value"]);
-    const mergedProps = mergeProps(scrollArea.getRootProps(), localProps);
-    return jsxRuntimeExports.jsx(ScrollAreaProvider, { value: scrollArea, children: jsxRuntimeExports.jsx(ark.div, { ...mergedProps, ref }) });
-  });
-  ScrollAreaRootProvider.displayName = "ScrollAreaRootProvider";
-  const [ScrollAreaScrollbarProvider, useScrollAreaScrollbarContext] = createContext({
-    name: "ScrollAreaScrollbarContext",
-    hookName: "useScrollAreaScrollbarContext",
-    providerName: "<ScrollAreaScrollbarProvider />"
-  });
-  const splitScrollbarProps = createSplitProps();
-  const ScrollAreaScrollbar = reactExports.forwardRef((props, ref) => {
-    const [scrollbarProps, localProps] = splitScrollbarProps(props, ["orientation"]);
-    const scrollAreaApi = useScrollAreaContext();
-    const mergedProps = mergeProps(scrollAreaApi.getScrollbarProps(scrollbarProps), localProps);
-    return jsxRuntimeExports.jsx(ScrollAreaScrollbarProvider, { value: scrollbarProps, children: jsxRuntimeExports.jsx(ark.div, { ...mergedProps, ref }) });
-  });
-  ScrollAreaScrollbar.displayName = "ScrollAreaScrollbar";
-  const ScrollAreaThumb$1 = reactExports.forwardRef((props, ref) => {
-    const scrollAreaApi = useScrollAreaContext();
-    const scrollbarProps = useScrollAreaScrollbarContext();
-    const mergedProps = mergeProps(scrollAreaApi.getThumbProps(scrollbarProps), props);
-    return jsxRuntimeExports.jsx(ark.div, { ...mergedProps, ref });
-  });
-  ScrollAreaThumb$1.displayName = "ScrollAreaThumb";
-  const ScrollAreaViewport$1 = reactExports.forwardRef((props, ref) => {
-    const scrollArea = useScrollAreaContext();
-    const mergedProps = mergeProps(scrollArea.getViewportProps(), props);
-    return jsxRuntimeExports.jsx(ark.div, { ...mergedProps, ref });
-  });
-  ScrollAreaViewport$1.displayName = "ScrollAreaViewport";
   const segmentGroupAnatomy = anatomy$8.rename("segment-group");
   segmentGroupAnatomy.build();
   var anatomy$5 = createAnatomy("select").parts(
@@ -30306,13 +29362,13 @@ actions: ["setPointerMoveOpened", "invokeOnOpen", "toggleVisibility"]
         },
         trackEscapeKey: ({ send, prop }) => {
           if (!prop("closeOnEscape")) return;
-          const onKeyDown = (event) => {
+          const onKeyDown2 = (event) => {
             if (isComposingEvent(event)) return;
             if (event.key !== "Escape") return;
             event.stopPropagation();
             send({ type: "close", src: "keydown.escape" });
           };
-          return addDomEvent$1(document, "keydown", onKeyDown, true);
+          return addDomEvent$1(document, "keydown", onKeyDown2, true);
         },
         waitForOpenDelay: ({ send, prop }) => {
           const id2 = setTimeout(() => {
@@ -43014,10 +42070,10 @@ translate: "calc(-1 * var(--scrollbar-width) / 2) 0px",
   });
   AbsoluteCenter.displayName = "AbsoluteCenter";
   const dataAttr = (condition) => condition ? "" : void 0;
-  const { withContext: withContext$4 } = createRecipeContext({
+  const { withContext: withContext$3 } = createRecipeContext({
     key: "spinner"
   });
-  const Spinner = withContext$4("span");
+  const Spinner = withContext$3("span");
   Spinner.displayName = "Spinner";
   const Loader = reactExports.forwardRef(
     function Loader2(props, ref) {
@@ -43250,31 +42306,11 @@ jsxRuntimeExports.jsx(Span, { visibility: "hidden", display: "contents", childre
     }
   );
   Flex.displayName = "Flex";
-  const { withContext: withContext$3 } = createRecipeContext({
+  const { withContext: withContext$2 } = createRecipeContext({
     key: "link"
   });
-  const Link = withContext$3("a");
+  const Link = withContext$2("a");
   Link.displayName = "Link";
-  const {
-    withProvider: withProvider$1,
-    withContext: withContext$2
-  } = createSlotRecipeContext({ key: "scrollArea" });
-  withProvider$1(ScrollAreaRootProvider, "root", { forwardAsChild: true });
-  const ScrollAreaRoot = withProvider$1(
-    ScrollAreaRoot$1,
-    "root",
-    { forwardAsChild: true }
-  );
-  const ScrollAreaViewport = withContext$2(ScrollAreaViewport$1, "viewport", { forwardAsChild: true });
-  const ScrollAreaContent = withContext$2(ScrollAreaContent$1, "content", { forwardAsChild: true });
-  const ScrollAreaThumb = withContext$2(ScrollAreaThumb$1, "thumb", { forwardAsChild: true });
-  withContext$2(ScrollAreaScrollbar, "scrollbar", {
-    forwardAsChild: true,
-    defaultProps: {
-      children: jsxRuntimeExports.jsx(ScrollAreaThumb, {})
-    }
-  });
-  withContext$2(ScrollAreaCorner, "corner", { forwardAsChild: true });
   const { useRecipeResult } = createRecipeContext({
     key: "separator"
   });
@@ -50450,7 +49486,13 @@ resetTree() {
       case "CRM_BIZPROC_TASK":
         return `${Task.ownerUrl}`;
       case "VOXIMPLANT_CALL":
-        return `/crm/contact/details/${Task.ownerID}`;
+        if (Task.ownerType === "DEAL") {
+          return `/crm/deal/details/${Task.ownerID}`;
+        }
+        if (Task.ownerType === "LEAD") {
+          return `/crm/lead/details/${Task.ownerID}`;
+        }
+        break;
       default:
         return "#";
     }
@@ -50620,7 +49662,7 @@ resetTree() {
         const key = `${FormatNumber(day)}.${FormatNumber(cursor2.month + 1)}.${cursor2.year}`;
         const listTodo = [...deals.get(key)?.keys().map((_key) => `${NameProviderId[_key] ?? _key}: ${deals.get(key)?.get(_key)?.length}`) ?? []];
         const countTodo = deals.get(key)?.entries().reduce(_temp2$1, 0) ?? 0;
-        return jsxRuntimeExports.jsxs(Cell, { bg: isWeekend(cursor2.year, cursor2.month, day) ? "linear-gradient(135deg, rgba(255,0,0,0.12), rgba(255,0,0,0.04))" : "whiteAlpha.500", boxShadow: "4px 4px 8px 0px rgba(34, 60, 80, 0.2)", outline: isToday(key) ? "2px solid red" : "none", overflow: "scroll", marginTop: "1px", onClick: () => {
+        return jsxRuntimeExports.jsxs(Cell, { bg: isWeekend(cursor2.year, cursor2.month, day) ? "linear-gradient(135deg, rgba(255,0,0,0.12), rgba(255,0,0,0.04))" : "whiteAlpha.500", boxShadow: "4px 4px 8px 0px rgba(34, 60, 80, 0.2)", outline: isToday(key) ? "2px solid red" : "none", overflowY: "auto", marginTop: "1px", onClick: () => {
           console.log(day, cursor2.year, cursor2.month);
           goToDay(day, cursor2.year, cursor2.month);
         }, children: [
@@ -50731,7 +49773,7 @@ jsxRuntimeExports.jsx(For, { each: Array(24).fill(null), children: (_2, hour) =>
             const TaskByHour = TaskByDate ? Array.from(TaskByDate.values()).flat().filter((task) => typeof task.deadline === "string" && task.deadline.startsWith(keyAndHour)) : [];
             return jsxRuntimeExports.jsxs(Flex, { justifyContent: "start", alignItems: "center", h: "100px", maxW: "250px", outline: "1px solid white", children: [
 jsxRuntimeExports.jsx(Show, { when: index == 0, children: jsxRuntimeExports.jsx(Box, { writingMode: "sideways-lr", textAlign: "center", h: "100%", bg: "green.500", outline: "1px solid white", children: jsxRuntimeExports.jsx(Text, { children: `${FormatNumber(hour)}:00` }) }) }),
-jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-start", h: "100%", w: "100%", overflow: "auto", scrollBehavior: "smooth", children: jsxRuntimeExports.jsx(For, { each: TaskByHour, children: _temp7 }) })
+jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-start", h: "100%", w: "100%", overflowY: "auto", children: jsxRuntimeExports.jsx(For, { each: TaskByHour, children: _temp7 }) })
             ] }, `hour-${hour}`);
           } })
         ] }, `Day-${index}`);
@@ -50754,7 +49796,7 @@ jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-
     return t3;
   };
   const RenderDay = (t0) => {
-    const $ = compilerRuntimeExports.c(95);
+    const $ = compilerRuntimeExports.c(93);
     const {
       deals,
       cursor: cursor2,
@@ -50812,7 +49854,6 @@ jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-
     let t24;
     let t25;
     let t26;
-    let t27;
     let t4;
     let t5;
     let t6;
@@ -50829,7 +49870,6 @@ jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-
       t24 = "70dvh";
       t25 = "1px";
       t26 = "auto";
-      t27 = "smooth";
       T2 = Cell;
       t17 = "whiteAlpha.500";
       t18 = isToday(key) ? "2px solid red" : "none";
@@ -50875,13 +49915,12 @@ jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-
       $[31] = t24;
       $[32] = t25;
       $[33] = t26;
-      $[34] = t27;
-      $[35] = t4;
-      $[36] = t5;
-      $[37] = t6;
-      $[38] = t7;
-      $[39] = t8;
-      $[40] = t9;
+      $[34] = t4;
+      $[35] = t5;
+      $[36] = t6;
+      $[37] = t7;
+      $[38] = t8;
+      $[39] = t9;
     } else {
       T0 = $[12];
       T1 = $[13];
@@ -50905,167 +49944,156 @@ jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-
       t24 = $[31];
       t25 = $[32];
       t26 = $[33];
-      t27 = $[34];
-      t4 = $[35];
-      t5 = $[36];
-      t6 = $[37];
-      t7 = $[38];
-      t8 = $[39];
-      t9 = $[40];
+      t4 = $[34];
+      t5 = $[35];
+      t6 = $[36];
+      t7 = $[37];
+      t8 = $[38];
+      t9 = $[39];
     }
-    let t28;
-    if ($[41] !== T0 || $[42] !== key || $[43] !== t10 || $[44] !== t11 || $[45] !== t12 || $[46] !== t13 || $[47] !== t4 || $[48] !== t5 || $[49] !== t6 || $[50] !== t7 || $[51] !== t8 || $[52] !== t9) {
-      t28 = jsxRuntimeExports.jsx(T0, { bg: t4, rounded: t5, display: t6, alignItems: t7, justifyContent: t8, fontSize: t9, fontWeight: t10, color: t11, marginBottom: t12, bgColor: t13, children: key });
-      $[41] = T0;
-      $[42] = key;
-      $[43] = t10;
-      $[44] = t11;
-      $[45] = t12;
-      $[46] = t13;
-      $[47] = t4;
-      $[48] = t5;
-      $[49] = t6;
-      $[50] = t7;
-      $[51] = t8;
-      $[52] = t9;
-      $[53] = t28;
+    let t27;
+    if ($[40] !== T0 || $[41] !== key || $[42] !== t10 || $[43] !== t11 || $[44] !== t12 || $[45] !== t13 || $[46] !== t4 || $[47] !== t5 || $[48] !== t6 || $[49] !== t7 || $[50] !== t8 || $[51] !== t9) {
+      t27 = jsxRuntimeExports.jsx(T0, { bg: t4, rounded: t5, display: t6, alignItems: t7, justifyContent: t8, fontSize: t9, fontWeight: t10, color: t11, marginBottom: t12, bgColor: t13, children: key });
+      $[40] = T0;
+      $[41] = key;
+      $[42] = t10;
+      $[43] = t11;
+      $[44] = t12;
+      $[45] = t13;
+      $[46] = t4;
+      $[47] = t5;
+      $[48] = t6;
+      $[49] = t7;
+      $[50] = t8;
+      $[51] = t9;
+      $[52] = t27;
     } else {
-      t28 = $[53];
+      t27 = $[52];
     }
-    const t29 = countTodo > 0;
-    const t30 = `Запланировано дел: ${countTodo}`;
-    let t31;
-    if ($[54] !== t30) {
-      t31 = jsxRuntimeExports.jsx(Mark, { variant: "plain", children: jsxRuntimeExports.jsx(Text, { children: t30 }) });
+    const t28 = countTodo > 0;
+    const t29 = `Запланировано дел: ${countTodo}`;
+    let t30;
+    if ($[53] !== t29) {
+      t30 = jsxRuntimeExports.jsx(Mark, { variant: "plain", children: jsxRuntimeExports.jsx(Text, { children: t29 }) });
+      $[53] = t29;
       $[54] = t30;
-      $[55] = t31;
     } else {
-      t31 = $[55];
+      t30 = $[54];
     }
-    let t32;
-    if ($[56] !== t29 || $[57] !== t31) {
-      t32 = jsxRuntimeExports.jsx(Show, { when: t29, children: t31 });
-      $[56] = t29;
+    let t31;
+    if ($[55] !== t28 || $[56] !== t30) {
+      t31 = jsxRuntimeExports.jsx(Show, { when: t28, children: t30 });
+      $[55] = t28;
+      $[56] = t30;
       $[57] = t31;
-      $[58] = t32;
     } else {
-      t32 = $[58];
+      t31 = $[57];
     }
-    const t33 = countTodo == 0;
-    let t34;
-    if ($[59] === Symbol.for("react.memo_cache_sentinel")) {
-      t34 = jsxRuntimeExports.jsx(Text, { color: "blackAlpha.400", children: "Дел нет" });
-      $[59] = t34;
+    const t32 = countTodo == 0;
+    let t33;
+    if ($[58] === Symbol.for("react.memo_cache_sentinel")) {
+      t33 = jsxRuntimeExports.jsx(Text, { color: "blackAlpha.400", children: "Дел нет" });
+      $[58] = t33;
     } else {
-      t34 = $[59];
+      t33 = $[58];
+    }
+    let t34;
+    if ($[59] !== t32) {
+      t34 = jsxRuntimeExports.jsx(Show, { when: t32, children: t33 });
+      $[59] = t32;
+      $[60] = t34;
+    } else {
+      t34 = $[60];
     }
     let t35;
-    if ($[60] !== t33) {
-      t35 = jsxRuntimeExports.jsx(Show, { when: t33, children: t34 });
-      $[60] = t33;
-      $[61] = t35;
+    if ($[61] !== t31 || $[62] !== t34) {
+      t35 = jsxRuntimeExports.jsxs(Box, { bg: "white", rounded: "2xl", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: "bold", color: "black", marginBottom: "1", children: [
+        t31,
+        t34
+      ] });
+      $[61] = t31;
+      $[62] = t34;
+      $[63] = t35;
     } else {
-      t35 = $[61];
+      t35 = $[63];
     }
     let t36;
-    if ($[62] !== t32 || $[63] !== t35) {
-      t36 = jsxRuntimeExports.jsxs(Box, { bg: "white", rounded: "2xl", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: "bold", color: "black", marginBottom: "1", children: [
-        t32,
+    if ($[64] !== T1 || $[65] !== t14 || $[66] !== t15 || $[67] !== t16 || $[68] !== t27 || $[69] !== t35) {
+      t36 = jsxRuntimeExports.jsxs(T1, { position: t14, top: t15, bg: t16, children: [
+        t27,
         t35
       ] });
-      $[62] = t32;
-      $[63] = t35;
-      $[64] = t36;
+      $[64] = T1;
+      $[65] = t14;
+      $[66] = t15;
+      $[67] = t16;
+      $[68] = t27;
+      $[69] = t35;
+      $[70] = t36;
     } else {
-      t36 = $[64];
+      t36 = $[70];
     }
     let t37;
-    if ($[65] !== T1 || $[66] !== t14 || $[67] !== t15 || $[68] !== t16 || $[69] !== t28 || $[70] !== t36) {
-      t37 = jsxRuntimeExports.jsxs(T1, { position: t14, top: t15, bg: t16, children: [
-        t28,
-        t36
-      ] });
-      $[65] = T1;
-      $[66] = t14;
-      $[67] = t15;
-      $[68] = t16;
-      $[69] = t28;
-      $[70] = t36;
+    if ($[71] === Symbol.for("react.memo_cache_sentinel")) {
+      t37 = Array(24).fill(null);
       $[71] = t37;
     } else {
       t37 = $[71];
     }
     let t38;
-    if ($[72] === Symbol.for("react.memo_cache_sentinel")) {
-      t38 = Array(24).fill(null);
-      $[72] = t38;
-    } else {
-      t38 = $[72];
-    }
-    let t39;
-    if ($[73] !== CurrentDays || $[74] !== deals || $[75] !== key) {
-      t39 = jsxRuntimeExports.jsx(For, { each: t38, children: (_2, hour) => {
+    if ($[72] !== CurrentDays || $[73] !== deals || $[74] !== key) {
+      t38 = jsxRuntimeExports.jsx(For, { each: t37, children: (_2, hour) => {
         const keyAndHour = `${FormatNumber(CurrentDays.getDate())}.${FormatNumber(CurrentDays.getMonth() + 1)}.${CurrentDays.getFullYear()} ${FormatNumber(hour)}`;
         const TaskByDate = deals.get(key);
         const TaskByHour = TaskByDate ? Array.from(TaskByDate.values()).flat().filter((task) => typeof task.deadline === "string" && task.deadline.startsWith(keyAndHour)) : [];
         return jsxRuntimeExports.jsxs(Flex, { justifyContent: "start", alignItems: "center", h: TaskByHour.length > 0 ? "150px" : "50px", outline: "1px solid white", children: [
 jsxRuntimeExports.jsx(Box, { writingMode: "sideways-lr", textAlign: "center", h: "100%", bg: "green.500", outline: "1px solid white", children: jsxRuntimeExports.jsx(Text, { children: `${FormatNumber(hour)}:00` }) }),
-jsxRuntimeExports.jsx(ScrollAreaRoot, { h: TaskByHour.length > 2 ? "150px" : "50px", children: jsxRuntimeExports.jsx(ScrollAreaViewport, { css: {
-            "--scroll-shadow-size": "2rem",
-            maskImage: "linear-gradient(#000,#000,transparent 0,#000 var(--scroll-shadow-size),#000 calc(100% - var(--scroll-shadow-size)),transparent)",
-            "&[data-at-top]": {
-              maskImage: "linear-gradient(180deg,#000 calc(100% - var(--scroll-shadow-size)),transparent)"
-            },
-            "&[data-at-bottom]": {
-              maskImage: "linear-gradient(0deg,#000 calc(100% - var(--scroll-shadow-size)),transparent)"
-            }
-          }, children: jsxRuntimeExports.jsx(ScrollAreaContent, { spaceY: "4", children: jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-start", h: "100%", w: "100%", overflow: "auto", scrollBehavior: "smooth", children: jsxRuntimeExports.jsx(For, { each: TaskByHour, children: _temp9 }) }) }) }) })
+jsxRuntimeExports.jsx(VStack, { alignItems: "flex-start", justifyContent: "flex-start", h: "100%", w: "100%", overflowY: "auto", children: jsxRuntimeExports.jsx(For, { each: TaskByHour, children: _temp9 }) })
         ] }, `hour-${hour}`);
       } });
-      $[73] = CurrentDays;
-      $[74] = deals;
-      $[75] = key;
-      $[76] = t39;
+      $[72] = CurrentDays;
+      $[73] = deals;
+      $[74] = key;
+      $[75] = t38;
     } else {
-      t39 = $[76];
+      t38 = $[75];
+    }
+    let t39;
+    if ($[76] !== T2 || $[77] !== t17 || $[78] !== t18 || $[79] !== t19 || $[80] !== t20 || $[81] !== t36 || $[82] !== t38) {
+      t39 = jsxRuntimeExports.jsxs(T2, { bg: t17, outline: t18, h: t19, margin: t20, children: [
+        t36,
+        t38
+      ] });
+      $[76] = T2;
+      $[77] = t17;
+      $[78] = t18;
+      $[79] = t19;
+      $[80] = t20;
+      $[81] = t36;
+      $[82] = t38;
+      $[83] = t39;
+    } else {
+      t39 = $[83];
     }
     let t40;
-    if ($[77] !== T2 || $[78] !== t17 || $[79] !== t18 || $[80] !== t19 || $[81] !== t20 || $[82] !== t37 || $[83] !== t39) {
-      t40 = jsxRuntimeExports.jsxs(T2, { bg: t17, outline: t18, h: t19, margin: t20, children: [
-        t37,
-        t39
-      ] });
-      $[77] = T2;
-      $[78] = t17;
-      $[79] = t18;
-      $[80] = t19;
-      $[81] = t20;
-      $[82] = t37;
-      $[83] = t39;
-      $[84] = t40;
+    if ($[84] !== T3 || $[85] !== t21 || $[86] !== t22 || $[87] !== t23 || $[88] !== t24 || $[89] !== t25 || $[90] !== t26 || $[91] !== t39) {
+      t40 = jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx(T3, { display: t21, gap: t22, w: t23, h: t24, marginTop: t25, overflowY: t26, children: t39 }) });
+      $[84] = T3;
+      $[85] = t21;
+      $[86] = t22;
+      $[87] = t23;
+      $[88] = t24;
+      $[89] = t25;
+      $[90] = t26;
+      $[91] = t39;
+      $[92] = t40;
     } else {
-      t40 = $[84];
+      t40 = $[92];
     }
-    let t41;
-    if ($[85] !== T3 || $[86] !== t21 || $[87] !== t22 || $[88] !== t23 || $[89] !== t24 || $[90] !== t25 || $[91] !== t26 || $[92] !== t27 || $[93] !== t40) {
-      t41 = jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx(T3, { display: t21, gap: t22, w: t23, h: t24, marginTop: t25, overflow: t26, scrollBehavior: t27, children: t40 }) });
-      $[85] = T3;
-      $[86] = t21;
-      $[87] = t22;
-      $[88] = t23;
-      $[89] = t24;
-      $[90] = t25;
-      $[91] = t26;
-      $[92] = t27;
-      $[93] = t40;
-      $[94] = t41;
-    } else {
-      t41 = $[94];
-    }
-    return t41;
+    return t40;
   };
   const CalendarGrid = (t0) => {
-    const $ = compilerRuntimeExports.c(104);
+    const $ = compilerRuntimeExports.c(112);
     const {
       deals
     } = t0;
@@ -51104,19 +50132,21 @@ jsxRuntimeExports.jsx(ScrollAreaRoot, { h: TaskByHour.length > 2 ? "150px" : "50
     const handlePrev = t2;
     let MinAndMaxTasks;
     let TaskByDaysAndProviderId;
+    let TasksByDays;
+    let t3;
     if ($[4] !== deals) {
-      const TasksByDays = new Map();
+      const _TasksByDays = new Map();
       deals.forEach((task) => {
         const day = task.deadline.split(" ")[0];
-        if (TasksByDays.has(day)) {
-          TasksByDays.get(day)?.push(task);
+        if (_TasksByDays.has(day)) {
+          _TasksByDays.get(day)?.push(task);
         } else {
-          TasksByDays.set(day, [task]);
+          _TasksByDays.set(day, [task]);
         }
       });
       TaskByDaysAndProviderId = new Map();
       MinAndMaxTasks = [0, 0];
-      TasksByDays.forEach((tasks, day_0) => {
+      _TasksByDays.forEach((tasks, day_0) => {
         const newMap = new Map();
         tasks.forEach((task_0) => {
           if (newMap.has(task_0.providerID)) {
@@ -51127,431 +50157,469 @@ jsxRuntimeExports.jsx(ScrollAreaRoot, { h: TaskByHour.length > 2 ? "150px" : "50
         });
         TaskByDaysAndProviderId.set(day_0, newMap);
       });
-      TasksByDays.forEach((tasks_0, day_1) => {
+      _TasksByDays.forEach((tasks_0, day_1) => {
         const CountTask = tasks_0.length;
         MinAndMaxTasks[0] = CountTask < MinAndMaxTasks[0] ? CountTask : MinAndMaxTasks[0];
         MinAndMaxTasks[1] = CountTask > MinAndMaxTasks[1] ? CountTask : MinAndMaxTasks[1];
       });
+      const sortedEntries = [..._TasksByDays.entries()].sort(_temp0);
+      TasksByDays = new Map(sortedEntries);
+      const entries = Array.from(TasksByDays.entries());
+      t3 = entries.length === 0 ? null : {
+        from: entries[0][0],
+        to: entries[entries.length - 1][0]
+      };
       $[4] = deals;
       $[5] = MinAndMaxTasks;
       $[6] = TaskByDaysAndProviderId;
+      $[7] = TasksByDays;
+      $[8] = t3;
     } else {
       MinAndMaxTasks = $[5];
       TaskByDaysAndProviderId = $[6];
+      TasksByDays = $[7];
+      t3 = $[8];
     }
-    const t3 = deals.size !== 0;
-    let t4;
-    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
-      t4 = jsxRuntimeExports.jsx(Flex, { justifyContent: "center", alignItems: "center", w: "full", h: "full", children: jsxRuntimeExports.jsxs(VStack, { children: [
+    const range = t3;
+    console.log("sortedMap", TasksByDays);
+    const t4 = deals.size !== 0;
+    let t5;
+    if ($[9] === Symbol.for("react.memo_cache_sentinel")) {
+      t5 = jsxRuntimeExports.jsx(Flex, { justifyContent: "center", alignItems: "center", w: "full", h: "full", children: jsxRuntimeExports.jsxs(VStack, { children: [
 jsxRuntimeExports.jsx(Heading, { children: "Загрузка...." }),
 jsxRuntimeExports.jsx(Spinner, { size: "xl" })
       ] }) });
-      $[7] = t4;
-    } else {
-      t4 = $[7];
-    }
-    let t5;
-    if ($[8] !== view) {
-      t5 = jsxRuntimeExports.jsxs(Text, { children: [
-        "Масштаб: ",
-        view
-      ] });
-      $[8] = view;
       $[9] = t5;
     } else {
       t5 = $[9];
     }
     let t6;
-    if ($[10] !== cursor2.year) {
+    if ($[10] !== view) {
       t6 = jsxRuntimeExports.jsxs(Text, { children: [
-        "Год: ",
-        cursor2.year
+        "Масштаб: ",
+        view
       ] });
-      $[10] = cursor2.year;
+      $[10] = view;
       $[11] = t6;
     } else {
       t6 = $[11];
     }
     let t7;
-    if ($[12] !== cursor2.month) {
+    if ($[12] !== cursor2.year) {
       t7 = jsxRuntimeExports.jsxs(Text, { children: [
-        "Месяц: ",
-        cursor2.month
+        "Год: ",
+        cursor2.year
       ] });
-      $[12] = cursor2.month;
+      $[12] = cursor2.year;
       $[13] = t7;
     } else {
       t7 = $[13];
     }
     let t8;
-    if ($[14] !== cursor2.weekIndex) {
+    if ($[14] !== cursor2.month) {
       t8 = jsxRuntimeExports.jsxs(Text, { children: [
-        "Неделя: ",
-        cursor2.weekIndex
+        "Месяц: ",
+        cursor2.month
       ] });
-      $[14] = cursor2.weekIndex;
+      $[14] = cursor2.month;
       $[15] = t8;
     } else {
       t8 = $[15];
     }
     let t9;
-    if ($[16] !== cursor2.dayIndex) {
+    if ($[16] !== cursor2.weekIndex) {
       t9 = jsxRuntimeExports.jsxs(Text, { children: [
-        "День: ",
-        cursor2.dayIndex
+        "Неделя: ",
+        cursor2.weekIndex
       ] });
-      $[16] = cursor2.dayIndex;
+      $[16] = cursor2.weekIndex;
       $[17] = t9;
     } else {
       t9 = $[17];
     }
     let t10;
-    if ($[18] !== handlePrev) {
-      t10 = jsxRuntimeExports.jsx(Button, { onClick: handlePrev, children: "<-" });
-      $[18] = handlePrev;
+    if ($[18] !== cursor2.dayIndex) {
+      t10 = jsxRuntimeExports.jsxs(Text, { children: [
+        "День: ",
+        cursor2.dayIndex
+      ] });
+      $[18] = cursor2.dayIndex;
       $[19] = t10;
     } else {
       t10 = $[19];
     }
     let t11;
-    if ($[20] !== handleNext) {
-      t11 = jsxRuntimeExports.jsx(Button, { onClick: handleNext, children: "->" });
-      $[20] = handleNext;
+    if ($[20] !== range) {
+      t11 = range && jsxRuntimeExports.jsxs(Text, { children: [
+        "Найденный диапазон задач: ",
+        range.from,
+        " – ",
+        range.to
+      ] });
+      $[20] = range;
       $[21] = t11;
     } else {
       t11 = $[21];
     }
     let t12;
-    if ($[22] !== t10 || $[23] !== t11) {
-      t12 = jsxRuntimeExports.jsxs(HStack, { children: [
-        t10,
-        t11
-      ] });
-      $[22] = t10;
-      $[23] = t11;
-      $[24] = t12;
+    if ($[22] !== handlePrev) {
+      t12 = jsxRuntimeExports.jsx(Button, { onClick: handlePrev, children: "<-" });
+      $[22] = handlePrev;
+      $[23] = t12;
     } else {
-      t12 = $[24];
+      t12 = $[23];
     }
     let t13;
-    if ($[25] !== setView) {
-      t13 = (details) => {
-        console.log(details);
-        setView(details.value);
-      };
-      $[25] = setView;
-      $[26] = t13;
+    if ($[24] !== goToDay) {
+      t13 = jsxRuntimeExports.jsx(Button, { onClick: () => goToDay(( new Date()).getDate(), ( new Date()).getFullYear(), ( new Date()).getMonth()), children: "Сегодня" });
+      $[24] = goToDay;
+      $[25] = t13;
     } else {
-      t13 = $[26];
+      t13 = $[25];
     }
     let t14;
-    if ($[27] === Symbol.for("react.memo_cache_sentinel")) {
-      t14 = jsxRuntimeExports.jsxs(TabsList, { bg: "bg.muted", rounded: "l3", p: "1", children: [
-jsxRuntimeExports.jsx(TabsTrigger, { value: "month", children: "Месяц" }),
-jsxRuntimeExports.jsx(TabsTrigger, { value: "week", children: "Неделя" }),
-jsxRuntimeExports.jsx(TabsTrigger, { value: "day", children: "День" }),
-jsxRuntimeExports.jsx(TabsIndicator, { rounded: "l2" })
-      ] });
+    if ($[26] !== handleNext) {
+      t14 = jsxRuntimeExports.jsx(Button, { onClick: handleNext, children: "->" });
+      $[26] = handleNext;
       $[27] = t14;
     } else {
       t14 = $[27];
     }
     let t15;
-    let t16;
-    if ($[28] === Symbol.for("react.memo_cache_sentinel")) {
-      t15 = jsxRuntimeExports.jsx(Heading, { as: "h1", color: "white", children: "Масштаб месяц" });
-      t16 = jsxRuntimeExports.jsx(Separator, {});
-      $[28] = t15;
-      $[29] = t16;
+    if ($[28] !== t12 || $[29] !== t13 || $[30] !== t14) {
+      t15 = jsxRuntimeExports.jsxs(HStack, { children: [
+        t12,
+        t13,
+        t14
+      ] });
+      $[28] = t12;
+      $[29] = t13;
+      $[30] = t14;
+      $[31] = t15;
     } else {
-      t15 = $[28];
-      t16 = $[29];
+      t15 = $[31];
+    }
+    let t16;
+    if ($[32] !== setView) {
+      t16 = (details) => {
+        console.log(details);
+        setView(details.value);
+      };
+      $[32] = setView;
+      $[33] = t16;
+    } else {
+      t16 = $[33];
     }
     let t17;
-    if ($[30] !== cursor2) {
-      t17 = jsxRuntimeExports.jsx(RenderMonthName, { cursor: cursor2 });
-      $[30] = cursor2;
-      $[31] = t17;
+    if ($[34] === Symbol.for("react.memo_cache_sentinel")) {
+      t17 = jsxRuntimeExports.jsxs(TabsList, { bg: "bg.muted", rounded: "l3", p: "1", justifyContent: "center", children: [
+jsxRuntimeExports.jsx(TabsTrigger, { value: "month", children: "Месяц" }),
+jsxRuntimeExports.jsx(TabsTrigger, { value: "week", children: "Неделя" }),
+jsxRuntimeExports.jsx(TabsTrigger, { value: "day", children: "День" }),
+jsxRuntimeExports.jsx(TabsIndicator, { rounded: "l2" })
+      ] });
+      $[34] = t17;
     } else {
-      t17 = $[31];
+      t17 = $[34];
     }
     let t18;
-    if ($[32] !== cursor2 || $[33] !== view) {
-      t18 = jsxRuntimeExports.jsx(RenderDaysName, { cursor: cursor2, view });
-      $[32] = cursor2;
-      $[33] = view;
-      $[34] = t18;
+    let t19;
+    if ($[35] === Symbol.for("react.memo_cache_sentinel")) {
+      t18 = jsxRuntimeExports.jsx(Heading, { as: "h1", color: "white", children: "Масштаб месяц" });
+      t19 = jsxRuntimeExports.jsx(Separator, {});
+      $[35] = t18;
+      $[36] = t19;
     } else {
-      t18 = $[34];
+      t18 = $[35];
+      t19 = $[36];
     }
-    const t19 = `${cursor2.year}-${cursor2.month}-${cursor2.weekIndex}-${cursor2.dayIndex}`;
-    const t20 = direction > 0 ? 300 : -300;
+    let t20;
+    if ($[37] !== cursor2) {
+      t20 = jsxRuntimeExports.jsx(RenderMonthName, { cursor: cursor2 });
+      $[37] = cursor2;
+      $[38] = t20;
+    } else {
+      t20 = $[38];
+    }
     let t21;
-    if ($[35] !== t20) {
-      t21 = {
-        x: t20,
-        opacity: 0
-      };
-      $[35] = t20;
-      $[36] = t21;
+    if ($[39] !== cursor2 || $[40] !== view) {
+      t21 = jsxRuntimeExports.jsx(RenderDaysName, { cursor: cursor2, view });
+      $[39] = cursor2;
+      $[40] = view;
+      $[41] = t21;
     } else {
-      t21 = $[36];
+      t21 = $[41];
     }
-    let t22;
-    if ($[37] === Symbol.for("react.memo_cache_sentinel")) {
-      t22 = {
-        x: 0,
-        opacity: 1
-      };
-      $[37] = t22;
-    } else {
-      t22 = $[37];
-    }
-    const t23 = direction > 0 ? -300 : 300;
+    const t22 = `${cursor2.year}-${cursor2.month}-${cursor2.weekIndex}-${cursor2.dayIndex}`;
+    const t23 = direction > 0 ? 300 : -300;
     let t24;
-    if ($[38] !== t23) {
+    if ($[42] !== t23) {
       t24 = {
         x: t23,
         opacity: 0
       };
-      $[38] = t23;
-      $[39] = t24;
+      $[42] = t23;
+      $[43] = t24;
     } else {
-      t24 = $[39];
+      t24 = $[43];
     }
     let t25;
-    let t26;
-    if ($[40] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[44] === Symbol.for("react.memo_cache_sentinel")) {
       t25 = {
-        type: "tween",
-        duration: 0.3
+        x: 0,
+        opacity: 1
       };
-      t26 = {
-        width: "100%",
-        height: "60dvh",
-        overflow: "scroll"
-      };
-      $[40] = t25;
-      $[41] = t26;
+      $[44] = t25;
     } else {
-      t25 = $[40];
-      t26 = $[41];
+      t25 = $[44];
     }
+    const t26 = direction > 0 ? -300 : 300;
     let t27;
-    if ($[42] !== MinAndMaxTasks || $[43] !== TaskByDaysAndProviderId || $[44] !== cursor2 || $[45] !== goToDay) {
-      t27 = jsxRuntimeExports.jsx(RenderMonth, { deals: TaskByDaysAndProviderId, cursor: cursor2, MinAndMaxTasks, goToDay });
-      $[42] = MinAndMaxTasks;
-      $[43] = TaskByDaysAndProviderId;
-      $[44] = cursor2;
-      $[45] = goToDay;
+    if ($[45] !== t26) {
+      t27 = {
+        x: t26,
+        opacity: 0
+      };
+      $[45] = t26;
       $[46] = t27;
     } else {
       t27 = $[46];
     }
     let t28;
-    if ($[47] !== t19 || $[48] !== t21 || $[49] !== t24 || $[50] !== t27) {
-      t28 = jsxRuntimeExports.jsx(AnimatePresence, { mode: "wait", children: jsxRuntimeExports.jsx(motion.div, { initial: t21, animate: t22, exit: t24, transition: t25, style: t26, children: t27 }, t19) });
-      $[47] = t19;
-      $[48] = t21;
-      $[49] = t24;
-      $[50] = t27;
-      $[51] = t28;
-    } else {
-      t28 = $[51];
-    }
     let t29;
-    if ($[52] !== t17 || $[53] !== t18 || $[54] !== t28) {
-      t29 = jsxRuntimeExports.jsx(TabsContent, { value: "month", children: jsxRuntimeExports.jsxs(VStack, { bg: "AccentColor", children: [
-        t15,
-        t16,
-        t17,
-        t18,
-        t28
-      ] }) });
-      $[52] = t17;
-      $[53] = t18;
-      $[54] = t28;
-      $[55] = t29;
+    if ($[47] === Symbol.for("react.memo_cache_sentinel")) {
+      t28 = {
+        type: "tween",
+        duration: 0.3
+      };
+      t29 = {
+        width: "100%",
+        height: "55dvh",
+        overflowY: "auto"
+      };
+      $[47] = t28;
+      $[48] = t29;
     } else {
-      t29 = $[55];
+      t28 = $[47];
+      t29 = $[48];
     }
     let t30;
-    let t31;
-    if ($[56] === Symbol.for("react.memo_cache_sentinel")) {
-      t30 = jsxRuntimeExports.jsx(Heading, { as: "h1", children: "Масштаб неделя" });
-      t31 = jsxRuntimeExports.jsx(Separator, {});
-      $[56] = t30;
-      $[57] = t31;
+    if ($[49] !== MinAndMaxTasks || $[50] !== TaskByDaysAndProviderId || $[51] !== cursor2 || $[52] !== goToDay) {
+      t30 = jsxRuntimeExports.jsx(RenderMonth, { deals: TaskByDaysAndProviderId, cursor: cursor2, MinAndMaxTasks, goToDay });
+      $[49] = MinAndMaxTasks;
+      $[50] = TaskByDaysAndProviderId;
+      $[51] = cursor2;
+      $[52] = goToDay;
+      $[53] = t30;
     } else {
-      t30 = $[56];
-      t31 = $[57];
+      t30 = $[53];
+    }
+    let t31;
+    if ($[54] !== t22 || $[55] !== t24 || $[56] !== t27 || $[57] !== t30) {
+      t31 = jsxRuntimeExports.jsx(AnimatePresence, { mode: "wait", children: jsxRuntimeExports.jsx(motion.div, { initial: t24, animate: t25, exit: t27, transition: t28, style: t29, children: t30 }, t22) });
+      $[54] = t22;
+      $[55] = t24;
+      $[56] = t27;
+      $[57] = t30;
+      $[58] = t31;
+    } else {
+      t31 = $[58];
     }
     let t32;
-    if ($[58] !== cursor2) {
-      t32 = jsxRuntimeExports.jsx(RenderMonthName, { cursor: cursor2 });
-      $[58] = cursor2;
-      $[59] = t32;
+    if ($[59] !== t20 || $[60] !== t21 || $[61] !== t31) {
+      t32 = jsxRuntimeExports.jsx(TabsContent, { value: "month", children: jsxRuntimeExports.jsxs(VStack, { bg: "AccentColor", children: [
+        t18,
+        t19,
+        t20,
+        t21,
+        t31
+      ] }) });
+      $[59] = t20;
+      $[60] = t21;
+      $[61] = t31;
+      $[62] = t32;
     } else {
-      t32 = $[59];
+      t32 = $[62];
     }
     let t33;
-    if ($[60] !== cursor2 || $[61] !== view) {
-      t33 = jsxRuntimeExports.jsx(RenderDaysName, { cursor: cursor2, view });
-      $[60] = cursor2;
-      $[61] = view;
-      $[62] = t33;
+    let t34;
+    if ($[63] === Symbol.for("react.memo_cache_sentinel")) {
+      t33 = jsxRuntimeExports.jsx(Heading, { as: "h1", children: "Масштаб неделя" });
+      t34 = jsxRuntimeExports.jsx(Separator, {});
+      $[63] = t33;
+      $[64] = t34;
     } else {
-      t33 = $[62];
+      t33 = $[63];
+      t34 = $[64];
     }
-    const t34 = `${cursor2.year}-${cursor2.month}-${cursor2.weekIndex}-${cursor2.dayIndex}`;
-    const t35 = direction > 0 ? 300 : -300;
+    let t35;
+    if ($[65] !== cursor2) {
+      t35 = jsxRuntimeExports.jsx(RenderMonthName, { cursor: cursor2 });
+      $[65] = cursor2;
+      $[66] = t35;
+    } else {
+      t35 = $[66];
+    }
     let t36;
-    if ($[63] !== t35) {
-      t36 = {
-        x: t35,
-        opacity: 0
-      };
-      $[63] = t35;
-      $[64] = t36;
+    if ($[67] !== cursor2 || $[68] !== view) {
+      t36 = jsxRuntimeExports.jsx(RenderDaysName, { cursor: cursor2, view });
+      $[67] = cursor2;
+      $[68] = view;
+      $[69] = t36;
     } else {
-      t36 = $[64];
+      t36 = $[69];
     }
-    let t37;
-    if ($[65] === Symbol.for("react.memo_cache_sentinel")) {
-      t37 = {
-        x: 0,
-        opacity: 1
-      };
-      $[65] = t37;
-    } else {
-      t37 = $[65];
-    }
-    const t38 = direction > 0 ? -300 : 300;
+    const t37 = `${cursor2.year}-${cursor2.month}-${cursor2.weekIndex}-${cursor2.dayIndex}`;
+    const t38 = direction > 0 ? 300 : -300;
     let t39;
-    if ($[66] !== t38) {
+    if ($[70] !== t38) {
       t39 = {
         x: t38,
         opacity: 0
       };
-      $[66] = t38;
-      $[67] = t39;
+      $[70] = t38;
+      $[71] = t39;
     } else {
-      t39 = $[67];
+      t39 = $[71];
     }
     let t40;
-    let t41;
-    if ($[68] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[72] === Symbol.for("react.memo_cache_sentinel")) {
       t40 = {
+        x: 0,
+        opacity: 1
+      };
+      $[72] = t40;
+    } else {
+      t40 = $[72];
+    }
+    const t41 = direction > 0 ? -300 : 300;
+    let t42;
+    if ($[73] !== t41) {
+      t42 = {
+        x: t41,
+        opacity: 0
+      };
+      $[73] = t41;
+      $[74] = t42;
+    } else {
+      t42 = $[74];
+    }
+    let t43;
+    let t44;
+    if ($[75] === Symbol.for("react.memo_cache_sentinel")) {
+      t43 = {
         type: "tween",
         duration: 0.3
       };
-      t41 = {
+      t44 = {
         width: "100%",
         height: "60dvh",
-        overflowY: "scroll"
+        overflowY: "auto"
       };
-      $[68] = t40;
-      $[69] = t41;
+      $[75] = t43;
+      $[76] = t44;
     } else {
-      t40 = $[68];
-      t41 = $[69];
-    }
-    let t42;
-    if ($[70] !== MinAndMaxTasks || $[71] !== TaskByDaysAndProviderId || $[72] !== cursor2) {
-      t42 = jsxRuntimeExports.jsx(RenderWeek, { deals: TaskByDaysAndProviderId, cursor: cursor2, MinAndMaxTasks });
-      $[70] = MinAndMaxTasks;
-      $[71] = TaskByDaysAndProviderId;
-      $[72] = cursor2;
-      $[73] = t42;
-    } else {
-      t42 = $[73];
-    }
-    let t43;
-    if ($[74] !== t34 || $[75] !== t36 || $[76] !== t39 || $[77] !== t42) {
-      t43 = jsxRuntimeExports.jsx(AnimatePresence, { mode: "wait", children: jsxRuntimeExports.jsx(motion.div, { initial: t36, animate: t37, exit: t39, transition: t40, style: t41, children: t42 }, t34) });
-      $[74] = t34;
-      $[75] = t36;
-      $[76] = t39;
-      $[77] = t42;
-      $[78] = t43;
-    } else {
-      t43 = $[78];
-    }
-    let t44;
-    if ($[79] !== t32 || $[80] !== t33 || $[81] !== t43) {
-      t44 = jsxRuntimeExports.jsx(TabsContent, { value: "week", children: jsxRuntimeExports.jsxs(VStack, { bg: "AccentColor", children: [
-        t30,
-        t31,
-        t32,
-        t33,
-        t43
-      ] }) });
-      $[79] = t32;
-      $[80] = t33;
-      $[81] = t43;
-      $[82] = t44;
-    } else {
-      t44 = $[82];
+      t43 = $[75];
+      t44 = $[76];
     }
     let t45;
-    if ($[83] !== MinAndMaxTasks || $[84] !== TaskByDaysAndProviderId || $[85] !== cursor2) {
-      t45 = jsxRuntimeExports.jsx(TabsContent, { value: "day", children: jsxRuntimeExports.jsx(RenderDay, { deals: TaskByDaysAndProviderId, cursor: cursor2, MinAndMaxTasks }) });
-      $[83] = MinAndMaxTasks;
-      $[84] = TaskByDaysAndProviderId;
-      $[85] = cursor2;
-      $[86] = t45;
+    if ($[77] !== MinAndMaxTasks || $[78] !== TaskByDaysAndProviderId || $[79] !== cursor2) {
+      t45 = jsxRuntimeExports.jsx(RenderWeek, { deals: TaskByDaysAndProviderId, cursor: cursor2, MinAndMaxTasks });
+      $[77] = MinAndMaxTasks;
+      $[78] = TaskByDaysAndProviderId;
+      $[79] = cursor2;
+      $[80] = t45;
     } else {
-      t45 = $[86];
+      t45 = $[80];
     }
     let t46;
-    if ($[87] !== t13 || $[88] !== t29 || $[89] !== t44 || $[90] !== t45 || $[91] !== view) {
-      t46 = jsxRuntimeExports.jsxs(TabsRoot, { w: "100%", defaultValue: "month", variant: "subtle", onValueChange: t13, value: view, children: [
-        t14,
-        t29,
-        t44,
-        t45
-      ] });
-      $[87] = t13;
-      $[88] = t29;
-      $[89] = t44;
-      $[90] = t45;
-      $[91] = view;
-      $[92] = t46;
+    if ($[81] !== t37 || $[82] !== t39 || $[83] !== t42 || $[84] !== t45) {
+      t46 = jsxRuntimeExports.jsx(AnimatePresence, { mode: "wait", children: jsxRuntimeExports.jsx(motion.div, { initial: t39, animate: t40, exit: t42, transition: t43, style: t44, children: t45 }, t37) });
+      $[81] = t37;
+      $[82] = t39;
+      $[83] = t42;
+      $[84] = t45;
+      $[85] = t46;
     } else {
-      t46 = $[92];
+      t46 = $[85];
     }
     let t47;
-    if ($[93] !== t12 || $[94] !== t46 || $[95] !== t5 || $[96] !== t6 || $[97] !== t7 || $[98] !== t8 || $[99] !== t9) {
-      t47 = jsxRuntimeExports.jsxs(VStack, { children: [
-        t5,
+    if ($[86] !== t35 || $[87] !== t36 || $[88] !== t46) {
+      t47 = jsxRuntimeExports.jsx(TabsContent, { value: "week", children: jsxRuntimeExports.jsxs(VStack, { bg: "AccentColor", children: [
+        t33,
+        t34,
+        t35,
+        t36,
+        t46
+      ] }) });
+      $[86] = t35;
+      $[87] = t36;
+      $[88] = t46;
+      $[89] = t47;
+    } else {
+      t47 = $[89];
+    }
+    let t48;
+    if ($[90] !== MinAndMaxTasks || $[91] !== TaskByDaysAndProviderId || $[92] !== cursor2) {
+      t48 = jsxRuntimeExports.jsx(TabsContent, { value: "day", children: jsxRuntimeExports.jsx(RenderDay, { deals: TaskByDaysAndProviderId, cursor: cursor2, MinAndMaxTasks }) });
+      $[90] = MinAndMaxTasks;
+      $[91] = TaskByDaysAndProviderId;
+      $[92] = cursor2;
+      $[93] = t48;
+    } else {
+      t48 = $[93];
+    }
+    let t49;
+    if ($[94] !== t16 || $[95] !== t32 || $[96] !== t47 || $[97] !== t48 || $[98] !== view) {
+      t49 = jsxRuntimeExports.jsxs(TabsRoot, { w: "100%", defaultValue: "month", justifyContent: "center", alignItems: "center", display: "flex", flexDir: "column", variant: "subtle", onValueChange: t16, value: view, children: [
+        t17,
+        t32,
+        t47,
+        t48
+      ] });
+      $[94] = t16;
+      $[95] = t32;
+      $[96] = t47;
+      $[97] = t48;
+      $[98] = view;
+      $[99] = t49;
+    } else {
+      t49 = $[99];
+    }
+    let t50;
+    if ($[100] !== t10 || $[101] !== t11 || $[102] !== t15 || $[103] !== t49 || $[104] !== t6 || $[105] !== t7 || $[106] !== t8 || $[107] !== t9) {
+      t50 = jsxRuntimeExports.jsxs(VStack, { justifyContent: "center", alignItems: "center", display: "flex", w: "100%", children: [
         t6,
         t7,
         t8,
         t9,
-        t12,
-        t46
+        t10,
+        t11,
+        t15,
+        t49
       ] });
-      $[93] = t12;
-      $[94] = t46;
-      $[95] = t5;
-      $[96] = t6;
-      $[97] = t7;
-      $[98] = t8;
-      $[99] = t9;
-      $[100] = t47;
+      $[100] = t10;
+      $[101] = t11;
+      $[102] = t15;
+      $[103] = t49;
+      $[104] = t6;
+      $[105] = t7;
+      $[106] = t8;
+      $[107] = t9;
+      $[108] = t50;
     } else {
-      t47 = $[100];
+      t50 = $[108];
     }
-    let t48;
-    if ($[101] !== t3 || $[102] !== t47) {
-      t48 = jsxRuntimeExports.jsx(Box, { zIndex: 1e3, top: 0, position: "fixed", w: "100dvw", h: "100dvh", p: "1.5", background: "AccentColor", color: "AccentColorText", children: jsxRuntimeExports.jsx(Show, { when: t3, fallback: t4, children: t47 }) });
-      $[101] = t3;
-      $[102] = t47;
-      $[103] = t48;
+    let t51;
+    if ($[109] !== t4 || $[110] !== t50) {
+      t51 = jsxRuntimeExports.jsx(Box, { zIndex: 1e3, top: 0, position: "fixed", w: "100dvw", h: "100dvh", p: "1.5", background: "AccentColor", color: "AccentColorText", justifyContent: "center", alignItems: "center", display: "flex", children: jsxRuntimeExports.jsx(Show, { when: t4, fallback: t5, children: t50 }) });
+      $[109] = t4;
+      $[110] = t50;
+      $[111] = t51;
     } else {
-      t48 = $[103];
+      t51 = $[111];
     }
-    return t48;
+    return t51;
   };
   function _temp$1(_2, index) {
     return jsxRuntimeExports.jsx(Cell, { bg: "transparent" }, `empty-${index}`);
@@ -51587,9 +50655,18 @@ jsxRuntimeExports.jsx(TabsIndicator, { rounded: "l2" })
       color: "whiteAlpha.500"
     }, children: jsxRuntimeExports.jsx(Text, { lineClamp: "2", children: `${task_0.ID} - ${task_0.subject}-${task_0.description}` }) });
   }
+  function _temp0(t0, t1) {
+    const [a] = t0;
+    const [b2] = t1;
+    const [da, ma, ya] = a.split(".").map(Number);
+    const [db, mb, yb] = b2.split(".").map(Number);
+    return new Date(ya, ma - 1, da).getTime() - new Date(yb, mb - 1, db).getTime();
+  }
   function MainPage() {
     const $ = compilerRuntimeExports.c(3);
     const [deals] = useGetTaskList();
+    console.log("MainPage - start");
+    console.log("Deals:", deals);
     let t0;
     if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
       t0 = [];
@@ -51982,19 +51059,24 @@ jsxRuntimeExports.jsx(TabsIndicator, { rounded: "l2" })
     }
     return t0;
   }
+  if (document.getElementById("ActivityRebuild")) {
+    throw new Error("ActivityRebuild already mounted");
+  }
   const app = document.createElement("div");
   app.id = "ActivityRebuild";
   document.body.append(app);
   const root = ReactDOM.createRoot(app);
   function destroyApp() {
+    window.removeEventListener("keydown", onKeyDown);
     root.unmount();
     app.remove();
   }
-  addEventListener("keydown", (e) => {
+  function onKeyDown(e) {
     if (e.key === "Escape") {
       destroyApp();
     }
-  });
+  }
+  window.addEventListener("keydown", onKeyDown);
   root.render( jsxRuntimeExports.jsx(React.StrictMode, { children: jsxRuntimeExports.jsx(Provider, { children: jsxRuntimeExports.jsx(ClientOnly, { fallback: jsxRuntimeExports.jsx("div", { children: "Loading..." }), children: jsxRuntimeExports.jsx(LightMode, { children: jsxRuntimeExports.jsx(MainPage, {}) }) }) }) }));
 
 })();

@@ -72,7 +72,13 @@ const ProviderIdToUrl = (Task: TaskType) => {
     case "CRM_BIZPROC_TASK":
       return `${Task.ownerUrl}`;
     case "VOXIMPLANT_CALL":
-      return `/crm/contact/details/${Task.ownerID}`;
+      if (Task.ownerType === "DEAL") {
+        return `/crm/deal/details/${Task.ownerID}`;
+      }
+      if (Task.ownerType === "LEAD") {
+        return `/crm/lead/details/${Task.ownerID}`;
+      }
+      break;
     default:
       return "#";
   }
@@ -225,7 +231,7 @@ const RenderMonth = ({
                 }
                 boxShadow={"4px 4px 8px 0px rgba(34, 60, 80, 0.2)"}
                 outline={isToday(key) ? "2px solid red" : "none"}
-                overflow="scroll"
+                overflowY="auto"
                 marginTop={"1px"}
                 onClick={() => {
                   console.log(day, cursor.year, cursor.month);
@@ -431,8 +437,7 @@ const RenderWeek = ({
                           justifyContent={"flex-start"}
                           h="100%"
                           w="100%"
-                          overflow={"auto"}
-                          scrollBehavior={"smooth"}
+                          overflowY={"auto"}
                         >
                           <For each={TaskByHour}>
                             {(task) => (
@@ -501,8 +506,7 @@ const RenderDay = ({
         w={"100%"}
         h={"70dvh"}
         marginTop={"1px"}
-        overflow={"auto"}
-        scrollBehavior={"smooth"}
+        overflowY={"auto"}
       >
         <Cell
           bg={"whiteAlpha.500"}
@@ -586,30 +590,12 @@ const RenderDay = ({
                   >
                     <Text>{`${FormatNumber(hour)}:00`}</Text>
                   </Box>
-                  <ScrollArea.Root h={TaskByHour.length > 2 ? "150px" : "50px"}>
-                    <ScrollArea.Viewport
-                      css={{
-                        "--scroll-shadow-size": "2rem",
-                        maskImage:
-                          "linear-gradient(#000,#000,transparent 0,#000 var(--scroll-shadow-size),#000 calc(100% - var(--scroll-shadow-size)),transparent)",
-                        "&[data-at-top]": {
-                          maskImage:
-                            "linear-gradient(180deg,#000 calc(100% - var(--scroll-shadow-size)),transparent)",
-                        },
-                        "&[data-at-bottom]": {
-                          maskImage:
-                            "linear-gradient(0deg,#000 calc(100% - var(--scroll-shadow-size)),transparent)",
-                        },
-                      }}
-                    >
-                      <ScrollArea.Content spaceY="4">
                         <VStack
                           alignItems={"flex-start"}
                           justifyContent={"flex-start"}
                           h="100%"
                           w="100%"
-                          overflow={"auto"}
-                          scrollBehavior={"smooth"}
+                          overflowY={"auto"}
                         >
                           <For each={TaskByHour}>
                             {(task) => (
@@ -627,9 +613,6 @@ const RenderDay = ({
                             )}
                           </For>
                         </VStack>
-                      </ScrollArea.Content>
-                    </ScrollArea.Viewport>
-                  </ScrollArea.Root>
                 </Flex>
               );
             }}
@@ -654,14 +637,14 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
     prev();
   };
 
-  const TasksByDays = new Map<string, TaskType[]>();
+  const _TasksByDays = new Map<string, TaskType[]>();
 
   deals.forEach((task) => {
     const day = task.deadline.split(" ")[0];
-    if (TasksByDays.has(day)) {
-      TasksByDays.get(day)?.push(task);
+    if (_TasksByDays.has(day)) {
+      _TasksByDays.get(day)?.push(task);
     } else {
-      TasksByDays.set(day, [task]);
+      _TasksByDays.set(day, [task]);
     }
   });
 
@@ -669,7 +652,7 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
 
   const MinAndMaxTasks: [number, number] = [0, 0];
 
-  TasksByDays.forEach((tasks, day) => {
+  _TasksByDays.forEach((tasks, day) => {
     const newMap = new Map<string, TaskType[]>();
     tasks.forEach((task) => {
       if (newMap.has(task.providerID)) {
@@ -681,13 +664,34 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
     TaskByDaysAndProviderId.set(day, newMap);
   });
 
-  TasksByDays.forEach((tasks, day) => {
+  _TasksByDays.forEach((tasks, day) => {
     const CountTask = tasks.length;
     MinAndMaxTasks[0] =
       CountTask < MinAndMaxTasks[0] ? CountTask : MinAndMaxTasks[0];
     MinAndMaxTasks[1] =
       CountTask > MinAndMaxTasks[1] ? CountTask : MinAndMaxTasks[1];
   });
+
+  const sortedEntries = [..._TasksByDays.entries()].sort(([a], [b]) => {
+    const [da, ma, ya] = a.split(".").map(Number);
+    const [db, mb, yb] = b.split(".").map(Number);
+    return (
+      new Date(ya, ma - 1, da).getTime() - new Date(yb, mb - 1, db).getTime()
+    );
+  });
+
+  const TasksByDays = new Map(sortedEntries);
+  const entries = Array.from(TasksByDays.entries());
+
+  const range =
+    entries.length === 0
+      ? null
+      : {
+          from: entries[0][0],
+          to: entries[entries.length - 1][0],
+        };
+
+  console.log("sortedMap", TasksByDays);
 
   return (
     <Box
@@ -699,6 +703,9 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
       p={"1.5"}
       background={"AccentColor"}
       color={"AccentColorText"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      display={"flex"}
     >
       <Show
         when={deals.size !== 0}
@@ -716,21 +723,47 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
           </Flex>
         }
       >
-        <VStack>
+        <VStack
+          justifyContent={"center"}
+          alignItems={"center"}
+          display={"flex"}
+          w={"100%"}
+        >
           <Text>Масштаб: {view}</Text>
           <Text>Год: {cursor.year}</Text>
           <Text>Месяц: {cursor.month}</Text>
           <Text>Неделя: {cursor.weekIndex}</Text>
           <Text>День: {cursor.dayIndex}</Text>
 
+          {range && (
+            <Text>
+              Найденный диапазон задач: {range.from} – {range.to}
+            </Text>
+          )}
+
           <HStack>
             <Button onClick={handlePrev}>{"<-"}</Button>
+            <Button
+              onClick={() =>
+                goToDay(
+                  new Date().getDate(),
+                  new Date().getFullYear(),
+                  new Date().getMonth()
+                )
+              }
+            >
+              Сегодня
+            </Button>
             <Button onClick={handleNext}>{"->"}</Button>
           </HStack>
 
           <Tabs.Root
             w={"100%"}
             defaultValue="month"
+            justifyContent={"center"}
+            alignItems={"center"}
+            display={"flex"}
+            flexDir={"column"}
             variant="subtle"
             onValueChange={(details: TabsValueChangeDetails) => {
               console.log(details);
@@ -738,7 +771,12 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
             }}
             value={view}
           >
-            <Tabs.List bg="bg.muted" rounded="l3" p="1">
+            <Tabs.List
+              bg="bg.muted"
+              rounded="l3"
+              p="1"
+              justifyContent={"center"}
+            >
               <Tabs.Trigger value="month">Месяц</Tabs.Trigger>
               <Tabs.Trigger value="week">Неделя</Tabs.Trigger>
               <Tabs.Trigger value="day">День</Tabs.Trigger>
@@ -747,7 +785,9 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
 
             <Tabs.Content value="month">
               <VStack bg={"AccentColor"}>
-                <Heading as="h1" color={'white'}>Масштаб месяц</Heading>
+                <Heading as="h1" color={"white"}>
+                  Масштаб месяц
+                </Heading>
                 <Separator />
                 <RenderMonthName cursor={cursor} />
                 <RenderDaysName cursor={cursor} view={view} />
@@ -760,8 +800,8 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
                     transition={{ type: "tween", duration: 0.3 }}
                     style={{
                       width: "100%",
-                      height: "60dvh",
-                      overflow: "scroll",
+                      height: "55dvh",
+                      overflowY: "auto",
                     }}
                   >
                     <RenderMonth
@@ -791,7 +831,7 @@ const CalendarGrid = ({ deals }: { deals: Map<string, TaskType> }) => {
                     style={{
                       width: "100%",
                       height: "60dvh",
-                      overflowY: "scroll",
+                      overflowY: "auto",
                     }}
                   >
                     <RenderWeek

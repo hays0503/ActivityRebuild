@@ -6,6 +6,9 @@ import { useEffect } from "react";
 function MainPage() {
   const [deals] = useGetTaskList();
 
+  console.log("MainPage - start");
+  console.log("Deals:", deals);
+
   useEffect(() => {
     const BX = window.BX;
     if (!BX?.CrmActivityEditor) return;

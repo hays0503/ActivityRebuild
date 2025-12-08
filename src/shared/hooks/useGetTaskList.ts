@@ -12,6 +12,7 @@ const useGetTaskList = (): [
   const [deals, setDeals] = useState<Map<string, TaskType>>(new Map());
 
   useEffect(() => {
+    console.log("useGetTaskList - start");
     const BX = window.BX;
     if (!BX?.CrmActivityEditor) return;
 

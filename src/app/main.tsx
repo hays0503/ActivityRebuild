@@ -5,23 +5,29 @@ import { Provider } from "./provider";
 import { LightMode } from "@/shared/ui/color-mode";
 import { ClientOnly } from "@chakra-ui/react";
 
+if (document.getElementById("ActivityRebuild")) {
+  throw new Error("ActivityRebuild already mounted");
+}
+
 const app = document.createElement("div");
 app.id = "ActivityRebuild";
 document.body.append(app);
 
 const root = ReactDOM.createRoot(app);
 
-// Закрываем приложение корректно
 function destroyApp() {
+  window.removeEventListener("keydown", onKeyDown);
   root.unmount();
   app.remove();
 }
 
-addEventListener("keydown", (e) => {
+function onKeyDown(e: KeyboardEvent) {
   if (e.key === "Escape") {
     destroyApp();
   }
-});
+}
+
+window.addEventListener("keydown", onKeyDown);
 
 root.render(
   <React.StrictMode>
