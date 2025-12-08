@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       activityrebuild
 // @namespace  npm/vite-plugin-monkey
-// @version    0.0.0
+// @version    0.1
 // @icon       https://vitejs.dev/logo.svg
 // @match      https://bitrix.triline.kz/crm/activity/*
 // @grant      GM.addElement
