@@ -86,19 +86,11 @@ const ProviderIdToUrl = (Task: TaskType) => {
 };
 
 const ProviderIdOnClick = (TaskItem: TaskType) => {
-  switch (TaskItem.providerID) {
-    case "IMOPENLINES_SESSION":
-    case "CRM_EMAIL":
-    case "CALL_LIST":
-    case "CRM_WEBFORM":
-    case "CRM_TASKS_TASK_COMMENT":
-    default:
-      return () => {
-        window.BX.CrmActivityEditor.items[
-          "MY_ACTIVITIES_crm_activity_grid_editor"
-        ].viewActivity(TaskItem.ID, {});
-      };
-  }
+  return () => {
+    window.BX.CrmActivityEditor.items[
+      "MY_ACTIVITIES_crm_activity_grid_editor"
+    ].viewActivity(TaskItem.ID, {});
+  };
 };
 
 const DaysName = [
@@ -446,7 +438,8 @@ const RenderWeek = ({
                             {(task) => (
                               <Link
                                 variant="underline"
-                                href={ProviderIdToUrl(task)}
+                                // href={ProviderIdToUrl(task)}
+                                href="#"
                                 onClick={ProviderIdOnClick(task)}
                                 color={"white"}
                                 _hover={{ color: "whiteAlpha.500" }}
@@ -593,29 +586,29 @@ const RenderDay = ({
                   >
                     <Text>{`${FormatNumber(hour)}:00`}</Text>
                   </Box>
-                        <VStack
-                          alignItems={"flex-start"}
-                          justifyContent={"flex-start"}
-                          h="100%"
-                          w="100%"
-                          overflowY={"auto"}
+                  <VStack
+                    alignItems={"flex-start"}
+                    justifyContent={"flex-start"}
+                    h="100%"
+                    w="100%"
+                    overflowY={"auto"}
+                  >
+                    <For each={TaskByHour}>
+                      {(task) => (
+                        <Link
+                          variant="underline"
+                          href={ProviderIdToUrl(task)}
+                          onClick={ProviderIdOnClick(task)}
+                          color={"white"}
+                          _hover={{ color: "whiteAlpha.500" }}
                         >
-                          <For each={TaskByHour}>
-                            {(task) => (
-                              <Link
-                                variant="underline"
-                                href={ProviderIdToUrl(task)}
-                                onClick={ProviderIdOnClick(task)}
-                                color={"white"}
-                                _hover={{ color: "whiteAlpha.500" }}
-                              >
-                                <Text lineClamp="2">
-                                  {`${task.ID} - ${task.subject}-${task.description}`}
-                                </Text>
-                              </Link>
-                            )}
-                          </For>
-                        </VStack>
+                          <Text lineClamp="2">
+                            {`${task.ID} - ${task.subject}-${task.description}`}
+                          </Text>
+                        </Link>
+                      )}
+                    </For>
+                  </VStack>
                 </Flex>
               );
             }}
