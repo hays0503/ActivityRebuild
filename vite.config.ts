@@ -66,7 +66,7 @@ export default defineConfig({
         namespace: "npm/vite-plugin-monkey",
         match: ["https://bitrix.triline.kz/crm/activity/*"],
         grant: "none",
-        version: "1.0.0",
+        version: "1.1.0",
         name: "ActivityRebuild",
         description: "ActivityRebuild",
       },
