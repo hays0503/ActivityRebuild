@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name       activityrebuild
-// @namespace  npm/vite-plugin-monkey
-// @version    0.2
-// @icon       https://vitejs.dev/logo.svg
-// @match      https://bitrix.triline.kz/crm/activity/*
-// @grant      none
+// @name         ActivityRebuild
+// @namespace    npm/vite-plugin-monkey
+// @version      1.0.0
+// @description  ActivityRebuild
+// @icon         https://vitejs.dev/logo.svg
+// @match        https://bitrix.triline.kz/crm/activity/*
+// @grant        none
 // ==/UserScript==
 
 (function () {
@@ -49454,7 +49455,9 @@ resetTree() {
     CRM_MEETING: "Встречи",
     CRM_WEBFORM: "Веб-формы",
     CALL_LIST: "Обзвон лидов",
-    IMOPENLINES_SESSION: "Открытые линии"
+    IMOPENLINES_SESSION: "Открытые линии",
+    CRM_TASKS_TASK_COMMENT: "Комментарии",
+    CRM_BIZPROC_WORKFLOW: "Бизнес-процессы"
   };
   const ProviderIdToUrl = (Task) => {
     switch (Task.providerID) {
@@ -49503,6 +49506,8 @@ resetTree() {
       case "CRM_EMAIL":
       case "CALL_LIST":
       case "CRM_WEBFORM":
+      case "CRM_TASKS_TASK_COMMENT":
+      default:
         return () => {
           window.BX.CrmActivityEditor.items["MY_ACTIVITIES_crm_activity_grid_editor"].viewActivity(TaskItem.ID, {});
         };

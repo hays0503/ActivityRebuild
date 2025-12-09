@@ -13,7 +13,6 @@ import {
   HStack,
   Link,
   Mark,
-  ScrollArea,
   Separator,
   Show,
   Spinner,
@@ -40,6 +39,8 @@ const NameProviderId: Record<string, string> = {
   CRM_WEBFORM: "Веб-формы",
   CALL_LIST: "Обзвон лидов",
   IMOPENLINES_SESSION: "Открытые линии",
+  CRM_TASKS_TASK_COMMENT: "Комментарии",
+  CRM_BIZPROC_WORKFLOW: "Бизнес-процессы",
 };
 
 const ProviderIdToUrl = (Task: TaskType) => {
@@ -90,6 +91,8 @@ const ProviderIdOnClick = (TaskItem: TaskType) => {
     case "CRM_EMAIL":
     case "CALL_LIST":
     case "CRM_WEBFORM":
+    case "CRM_TASKS_TASK_COMMENT":
+    default:
       return () => {
         window.BX.CrmActivityEditor.items[
           "MY_ACTIVITIES_crm_activity_grid_editor"
